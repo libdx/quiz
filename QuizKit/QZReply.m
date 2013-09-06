@@ -2,7 +2,7 @@
 //  QZReply.m
 //  Quiz
 //
-//  Created by Alexander Ignatenko on 9/5/13.
+//  Created by Alexander Ignatenko on 9/6/13.
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
@@ -15,6 +15,8 @@
 @dynamic mark;
 @dynamic notes;
 @dynamic remoteID;
+@dynamic createdAt;
+@dynamic updatedAt;
 @dynamic question;
 
 @end

@@ -11,7 +11,15 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
     #import <QuickDialog.h>
     #import <CoreData+MagicalRecord.h>
+    #import <AFNetworking.h>
     #import <AFHTTPRequestOperationLogger.h>
+    #import <DDLog.h>
+    #import <MBProgressHUD.h>
+    #import "UIViewController+Common.h"
+    #import "QuizKit.h"
+    #import "AppDelegate.h"
 #endif

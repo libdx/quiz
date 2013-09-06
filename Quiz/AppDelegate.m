@@ -6,8 +6,18 @@
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
+#import <DDFileLogger.h>
+#import <DDTTYLogger.h>
+#import <DDASLLogger.h>
+
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+
+@interface AppDelegate ()
+@property (strong, nonatomic) LoginViewController *loginController;
+@end
+
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation AppDelegate
 
@@ -15,6 +25,13 @@
 {
     [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
     [MagicalRecord setupCoreDataStack];
+    
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    [DDLog addLogger:fileLogger];
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -22,8 +39,8 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
-    LoginViewController *loginController = [[LoginViewController alloc] init];
-    [rootController presentViewController:loginController animated:NO completion:nil];
+    self.loginController = [[LoginViewController alloc] init];
+    [rootController presentViewController:self.loginController animated:NO completion:nil];
     return YES;
 }
 
@@ -52,6 +69,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)viewControllerDidSignInUser:(UIViewController *)viewController
+{
+    QZUser *user = [QZUser currentUser];
+    DDLogVerbose(@"Username is: %@", user.username);
+    [self.loginController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

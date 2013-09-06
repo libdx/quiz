@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		97AD51DA4BC64A4192DFD257 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E5E27E55C042F181B571B0 /* libPods.a */; };
-		E11A48D917D881F8002FF874 /* QZReply.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A48D817D881F8002FF874 /* QZReply.m */; };
-		E11A48DC17D881F9002FF874 /* QZQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A48DB17D881F9002FF874 /* QZQuestion.m */; };
-		E11A48DF17D881F9002FF874 /* QZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A48DE17D881F9002FF874 /* QZUser.m */; };
 		E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A48E717D8E237002FF874 /* LoginViewController.m */; };
 		E11A48EB17D8E3EA002FF874 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A48EA17D8E3EA002FF874 /* BaseViewController.m */; };
+		E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A48F117D9F222002FF874 /* UIViewController+Common.m */; };
+		E11A491917D9FB65002FF874 /* QZReply.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A491817D9FB65002FF874 /* QZReply.m */; };
+		E11A491C17D9FB66002FF874 /* QZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A491B17D9FB66002FF874 /* QZUser.m */; };
+		E11A491F17D9FB66002FF874 /* QZQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A491E17D9FB66002FF874 /* QZQuestion.m */; };
+		E11A492317DA373B002FF874 /* QuizAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A492217DA373B002FF874 /* QuizAuthClient.m */; };
+		E11A492517DA3C74002FF874 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11A492417DA3C74002FF874 /* SystemConfiguration.framework */; };
+		E11A492717DA3C79002FF874 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11A492617DA3C79002FF874 /* MobileCoreServices.framework */; };
 		E11C561917D75D8000742115 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561817D75D8000742115 /* UIKit.framework */; };
 		E11C561B17D75D8000742115 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561A17D75D8000742115 /* Foundation.framework */; };
 		E11C561D17D75D8000742115 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561C17D75D8000742115 /* CoreGraphics.framework */; };
@@ -27,16 +31,23 @@
 
 /* Begin PBXFileReference section */
 		D3E5E27E55C042F181B571B0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E11A48D717D881F8002FF874 /* QZReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZReply.h; sourceTree = "<group>"; };
-		E11A48D817D881F8002FF874 /* QZReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZReply.m; sourceTree = "<group>"; };
-		E11A48DA17D881F9002FF874 /* QZQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZQuestion.h; sourceTree = "<group>"; };
-		E11A48DB17D881F9002FF874 /* QZQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZQuestion.m; sourceTree = "<group>"; };
-		E11A48DD17D881F9002FF874 /* QZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZUser.h; sourceTree = "<group>"; };
-		E11A48DE17D881F9002FF874 /* QZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZUser.m; sourceTree = "<group>"; };
 		E11A48E617D8E237002FF874 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E11A48E717D8E237002FF874 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E11A48E917D8E3EA002FF874 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		E11A48EA17D8E3EA002FF874 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		E11A48F017D9F222002FF874 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
+		E11A48F117D9F222002FF874 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
+		E11A491717D9FB65002FF874 /* QZReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZReply.h; sourceTree = "<group>"; };
+		E11A491817D9FB65002FF874 /* QZReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZReply.m; sourceTree = "<group>"; };
+		E11A491A17D9FB66002FF874 /* QZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZUser.h; sourceTree = "<group>"; };
+		E11A491B17D9FB66002FF874 /* QZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZUser.m; sourceTree = "<group>"; };
+		E11A491D17D9FB66002FF874 /* QZQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZQuestion.h; sourceTree = "<group>"; };
+		E11A491E17D9FB66002FF874 /* QZQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZQuestion.m; sourceTree = "<group>"; };
+		E11A492017D9FCE8002FF874 /* QuizKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizKit.h; sourceTree = "<group>"; };
+		E11A492117DA373A002FF874 /* QuizAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizAuthClient.h; sourceTree = "<group>"; };
+		E11A492217DA373B002FF874 /* QuizAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizAuthClient.m; sourceTree = "<group>"; };
+		E11A492417DA3C74002FF874 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E11A492617DA3C79002FF874 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E11C561517D75D8000742115 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11C561817D75D8000742115 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E11C561A17D75D8000742115 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -59,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11A492717DA3C79002FF874 /* MobileCoreServices.framework in Frameworks */,
+				E11A492517DA3C74002FF874 /* SystemConfiguration.framework in Frameworks */,
 				E11C561917D75D8000742115 /* UIKit.framework in Frameworks */,
 				E11C561B17D75D8000742115 /* Foundation.framework in Frameworks */,
 				E11C561D17D75D8000742115 /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E11A48EF17D9F1FE002FF874 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E11A48F017D9F222002FF874 /* UIViewController+Common.h */,
+				E11A48F117D9F222002FF874 /* UIViewController+Common.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		E11C560C17D75D8000742115 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +113,8 @@
 		E11C561717D75D8000742115 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E11A492617DA3C79002FF874 /* MobileCoreServices.framework */,
+				E11A492417DA3C74002FF874 /* SystemConfiguration.framework */,
 				E11C561817D75D8000742115 /* UIKit.framework */,
 				E11C561A17D75D8000742115 /* Foundation.framework */,
 				E11C561C17D75D8000742115 /* CoreGraphics.framework */,
@@ -103,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				E11C561F17D75D8000742115 /* Supporting Files */,
+				E11A48EF17D9F1FE002FF874 /* Common */,
 				E11C562717D75D8000742115 /* AppDelegate.h */,
 				E11C562817D75D8000742115 /* AppDelegate.m */,
 				E11A48E917D8E3EA002FF874 /* BaseViewController.h */,
@@ -138,13 +163,16 @@
 		E11C563917D7674800742115 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E11A492017D9FCE8002FF874 /* QuizKit.h */,
 				E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */,
-				E11A48DD17D881F9002FF874 /* QZUser.h */,
-				E11A48DE17D881F9002FF874 /* QZUser.m */,
-				E11A48DA17D881F9002FF874 /* QZQuestion.h */,
-				E11A48DB17D881F9002FF874 /* QZQuestion.m */,
-				E11A48D717D881F8002FF874 /* QZReply.h */,
-				E11A48D817D881F8002FF874 /* QZReply.m */,
+				E11A491D17D9FB66002FF874 /* QZQuestion.h */,
+				E11A491E17D9FB66002FF874 /* QZQuestion.m */,
+				E11A491A17D9FB66002FF874 /* QZUser.h */,
+				E11A491B17D9FB66002FF874 /* QZUser.m */,
+				E11A491717D9FB65002FF874 /* QZReply.h */,
+				E11A491817D9FB65002FF874 /* QZReply.m */,
+				E11A492117DA373A002FF874 /* QuizAuthClient.h */,
+				E11A492217DA373B002FF874 /* QuizAuthClient.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -252,11 +280,13 @@
 				E11C562517D75D8000742115 /* main.m in Sources */,
 				E11C562917D75D8000742115 /* AppDelegate.m in Sources */,
 				E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */,
-				E11A48D917D881F8002FF874 /* QZReply.m in Sources */,
-				E11A48DC17D881F9002FF874 /* QZQuestion.m in Sources */,
-				E11A48DF17D881F9002FF874 /* QZUser.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
 				E11A48EB17D8E3EA002FF874 /* BaseViewController.m in Sources */,
+				E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */,
+				E11A491917D9FB65002FF874 /* QZReply.m in Sources */,
+				E11A491C17D9FB66002FF874 /* QZUser.m in Sources */,
+				E11A491F17D9FB66002FF874 /* QZQuestion.m in Sources */,
+				E11A492317DA373B002FF874 /* QuizAuthClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Question" representedClassName="QZQuestion" syncable="YES">
+    <entity name="QZQuestion" representedClassName="QZQuestion" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="basket" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="control" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="field" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="max" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="min" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="step" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="questions" inverseEntity="User" syncable="YES"/>
-        <relationship name="replies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reply" inverseName="question" inverseEntity="Reply" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="questions" inverseEntity="QZUser" syncable="YES"/>
+        <relationship name="replies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZReply" inverseName="question" inverseEntity="QZReply" syncable="YES"/>
     </entity>
-    <entity name="Reply" representedClassName="QZReply" syncable="YES">
+    <entity name="QZReply" representedClassName="QZReply" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="mark" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="replies" inverseEntity="Question" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="replies" inverseEntity="QZQuestion" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName="QZUser" syncable="YES">
-        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    <entity name="QZUser" representedClassName="QZUser" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Question" inverseName="owner" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZQuestion" inverseName="owner" inverseEntity="QZQuestion" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Question" positionX="160" positionY="192" width="128" height="270"/>
-        <element name="Reply" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="QZQuestion" positionX="160" positionY="192" width="128" height="300"/>
+        <element name="QZReply" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="QZUser" positionX="160" positionY="192" width="128" height="135"/>
     </elements>
 </model>

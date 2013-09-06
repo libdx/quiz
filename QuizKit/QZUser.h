@@ -2,7 +2,7 @@
 //  QZUser.h
 //  Quiz
 //
-//  Created by Alexander Ignatenko on 9/5/13.
+//  Created by Alexander Ignatenko on 9/6/13.
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
@@ -15,6 +15,9 @@
 
 @property (nonatomic, retain) NSNumber * remoteID;
 @property (nonatomic, retain) NSString * username;
+@property (nonatomic, retain) NSString * token;
+@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSSet *questions;
 @end
 
@@ -24,5 +27,13 @@
 - (void)removeQuestionsObject:(QZQuestion *)value;
 - (void)addQuestions:(NSSet *)values;
 - (void)removeQuestions:(NSSet *)values;
+
+@end
+
+@interface QZUser (QuizKit)
+
++ (QZUser *)currentUser;
+
++ (void)setCurrentUser:(QZUser *)user;
 
 @end

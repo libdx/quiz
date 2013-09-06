@@ -7,10 +7,13 @@
 //
 
 #import "LoginViewController.h"
+#import "QZUser.h"
 
 @interface LoginHeaderView : UIView
 @property (strong, nonatomic) UILabel *label;
 @end
+
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation LoginHeaderView
 
@@ -37,7 +40,7 @@
 @end
 
 @interface LoginViewController ()
-
+@property (strong, nonatomic) QEntryElement *usernameElement;
 @end
 
 @implementation LoginViewController
@@ -53,25 +56,26 @@
     inputsHeader.label.text = @"Quiz";
     inputsHeader.backgroundColor = [UIColor clearColor];
     inputsSection.headerView = inputsHeader;
-    QEntryElement *loginElement = [[QEntryElement alloc] initWithTitle:@"Username" Value:@"" Placeholder:@"Username or Email"];
-    loginElement.keyboardType = UIKeyboardTypeEmailAddress;
+    self.usernameElement = [[QEntryElement alloc] initWithTitle:@"Username" Value:@"" Placeholder:@"Username or Email"];
+    self.usernameElement.key = @"username";
+    self.usernameElement.keyboardType = UIKeyboardTypeEmailAddress;
     QEntryElement *passwordElement = [[QEntryElement alloc] initWithTitle:@"Password" Value:@"" Placeholder:@"Password"];
     passwordElement.secureTextEntry = YES;
-    [inputsSection addElement:loginElement];
+    [inputsSection addElement:self.usernameElement];
     [inputsSection addElement:passwordElement];
 
     QSection *signInSection = [[QSection alloc] init];
     QButtonElement *signInButton = [[QButtonElement alloc] initWithTitle:@"Sign In"];
     signInButton.controllerAction = @"signIn:";
     [signInSection addElement:signInButton];
-    QSection *registrationSection = [[QSection alloc] init];
-    QButtonElement *registrationButton = [[QButtonElement alloc] initWithTitle:@"Registration"];
-    registrationButton.controllerAction = @"registration:";
-    [registrationSection addElement:registrationButton];
+    QSection *signUpSection = [[QSection alloc] init];
+    QButtonElement *signUpButton = [[QButtonElement alloc] initWithTitle:@"Sign Up"];
+    signUpButton.controllerAction = @"signUp:";
+    [signUpSection addElement:signUpButton];
 
     [rootElement addSection:inputsSection];
     [rootElement addSection:signInSection];
-    [rootElement addSection:registrationSection];
+    [rootElement addSection:signUpSection];
 
     return rootElement;
 }
@@ -83,9 +87,20 @@
 
 - (void)signIn:(id)sender
 {
+    NSMutableDictionary *userDict = @{@"username" : @"", @"password" : @""}.mutableCopy;
+    [self.usernameElement fetchValueIntoObject:userDict];
+
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[QuizAuthClient defaultClient] authenticateUsername:userDict[@"username"] withPassword:userDict[@"password"] success:^{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self.appDelegate viewControllerDidSignInUser:self];
+    } failure:^(NSError *error) {
+        DDLogError(@"Error: %@ %@ %@", THIS_FILE, THIS_METHOD, error);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }];
 }
 
-- (void)registration:(id)sender
+- (void)signUp:(id)sender
 {
 }
 

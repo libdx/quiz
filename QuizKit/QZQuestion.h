@@ -2,7 +2,7 @@
 //  QZQuestion.h
 //  Quiz
 //
-//  Created by Alexander Ignatenko on 9/5/13.
+//  Created by Alexander Ignatenko on 9/6/13.
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
@@ -23,9 +23,11 @@
 @property (nonatomic, retain) NSNumber * min;
 @property (nonatomic, retain) NSNumber * remoteID;
 @property (nonatomic, retain) NSNumber * step;
-@property (nonatomic, retain) id tags;
+@property (nonatomic, retain) NSArray *tags;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSNumber * value;
+@property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) QZUser *owner;
 @property (nonatomic, retain) NSSet *replies;
 @end
