@@ -12,6 +12,8 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "QuestionListViewController.h"
+#import "BaseNavigationController.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) LoginViewController *loginController;
@@ -23,6 +25,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
     [MagicalRecord setupCoreDataStack];
     
@@ -30,17 +33,19 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
     [DDLog addLogger:fileLogger];
-    [DDLog addLogger:[DDASLLogger sharedInstance]];
+//    [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    UIViewController *rootController = [[UIViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];
+    QuestionListViewController *questionListViewController = [[QuestionListViewController alloc] init];
+    BaseNavigationController *navController = [[BaseNavigationController alloc] initWithRootViewController:questionListViewController];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
-    self.loginController = [[LoginViewController alloc] init];
-    [rootController presentViewController:self.loginController animated:NO completion:nil];
+    if (nil == [QZUser currentUser]) {
+        self.loginController = [[LoginViewController alloc] init];
+        [self.window.rootViewController presentViewController:self.loginController animated:NO completion:nil];
+    }
     return YES;
 }
 

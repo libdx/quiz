@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : QuickDialogController
+@interface BaseViewController : UIViewController
 
 @end

@@ -17,6 +17,14 @@
 		E11A492317DA373B002FF874 /* QuizAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A492217DA373B002FF874 /* QuizAuthClient.m */; };
 		E11A492517DA3C74002FF874 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11A492417DA3C74002FF874 /* SystemConfiguration.framework */; };
 		E11A492717DA3C79002FF874 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11A492617DA3C79002FF874 /* MobileCoreServices.framework */; };
+		E11A492A17DB5FB9002FF874 /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A492917DB5FB8002FF874 /* QuestionListViewController.m */; };
+		E11A492D17DB6FE5002FF874 /* UIViewController+CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A492C17DB6FE5002FF874 /* UIViewController+CoreData.m */; };
+		E11A493217DB968D002FF874 /* QuestionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11A493117DB968C002FF874 /* QuestionListViewController.xib */; };
+		E11A493517DB994A002FF874 /* QuestionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A493417DB9949002FF874 /* QuestionDetailsViewController.m */; };
+		E11A493817DCA1A6002FF874 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A493717DCA1A6002FF874 /* BaseTableViewController.m */; };
+		E11A493B17DCA938002FF874 /* UIViewController+Editing.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A493A17DCA937002FF874 /* UIViewController+Editing.m */; };
+		E11A493E17DCAA30002FF874 /* UIViewController+Indie.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A493D17DCAA2F002FF874 /* UIViewController+Indie.m */; };
+		E11A494117DCB9E3002FF874 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A494017DCB9E1002FF874 /* BaseNavigationController.m */; };
 		E11C561917D75D8000742115 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561817D75D8000742115 /* UIKit.framework */; };
 		E11C561B17D75D8000742115 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561A17D75D8000742115 /* Foundation.framework */; };
 		E11C561D17D75D8000742115 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561C17D75D8000742115 /* CoreGraphics.framework */; };
@@ -48,6 +56,21 @@
 		E11A492217DA373B002FF874 /* QuizAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizAuthClient.m; sourceTree = "<group>"; };
 		E11A492417DA3C74002FF874 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E11A492617DA3C79002FF874 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E11A492817DB5FB8002FF874 /* QuestionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListViewController.h; sourceTree = "<group>"; };
+		E11A492917DB5FB8002FF874 /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
+		E11A492B17DB6FE5002FF874 /* UIViewController+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CoreData.h"; sourceTree = "<group>"; };
+		E11A492C17DB6FE5002FF874 /* UIViewController+CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CoreData.m"; sourceTree = "<group>"; };
+		E11A493117DB968C002FF874 /* QuestionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListViewController.xib; sourceTree = "<group>"; };
+		E11A493317DB9948002FF874 /* QuestionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailsViewController.h; sourceTree = "<group>"; };
+		E11A493417DB9949002FF874 /* QuestionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailsViewController.m; sourceTree = "<group>"; };
+		E11A493617DCA1A5002FF874 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		E11A493717DCA1A6002FF874 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		E11A493917DCA936002FF874 /* UIViewController+Editing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Editing.h"; sourceTree = "<group>"; };
+		E11A493A17DCA937002FF874 /* UIViewController+Editing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Editing.m"; sourceTree = "<group>"; };
+		E11A493C17DCAA2E002FF874 /* UIViewController+Indie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Indie.h"; sourceTree = "<group>"; };
+		E11A493D17DCAA2F002FF874 /* UIViewController+Indie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Indie.m"; sourceTree = "<group>"; };
+		E11A493F17DCB9E0002FF874 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		E11A494017DCB9E1002FF874 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		E11C561517D75D8000742115 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11C561817D75D8000742115 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E11C561A17D75D8000742115 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,13 +105,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E11A48EF17D9F1FE002FF874 /* Common */ = {
+		E11A48EF17D9F1FE002FF874 /* ViewControllerPlugins */ = {
+			isa = PBXGroup;
+			children = (
+				E11A492B17DB6FE5002FF874 /* UIViewController+CoreData.h */,
+				E11A492C17DB6FE5002FF874 /* UIViewController+CoreData.m */,
+				E11A493917DCA936002FF874 /* UIViewController+Editing.h */,
+				E11A493A17DCA937002FF874 /* UIViewController+Editing.m */,
+				E11A493C17DCAA2E002FF874 /* UIViewController+Indie.h */,
+				E11A493D17DCAA2F002FF874 /* UIViewController+Indie.m */,
+			);
+			name = ViewControllerPlugins;
+			sourceTree = "<group>";
+		};
+		E11A494217DCBC11002FF874 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				E11A48F017D9F222002FF874 /* UIViewController+Common.h */,
 				E11A48F117D9F222002FF874 /* UIViewController+Common.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		E11A494317DCBD53002FF874 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E11A48E917D8E3EA002FF874 /* BaseViewController.h */,
+				E11A48EA17D8E3EA002FF874 /* BaseViewController.m */,
+				E11A493617DCA1A5002FF874 /* BaseTableViewController.h */,
+				E11A493717DCA1A6002FF874 /* BaseTableViewController.m */,
+				E11A493F17DCB9E0002FF874 /* BaseNavigationController.h */,
+				E11A494017DCB9E1002FF874 /* BaseNavigationController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		E11C560C17D75D8000742115 = {
@@ -127,13 +176,18 @@
 			isa = PBXGroup;
 			children = (
 				E11C561F17D75D8000742115 /* Supporting Files */,
-				E11A48EF17D9F1FE002FF874 /* Common */,
+				E11A494217DCBC11002FF874 /* Common */,
+				E11A494317DCBD53002FF874 /* Base */,
+				E11A48EF17D9F1FE002FF874 /* ViewControllerPlugins */,
 				E11C562717D75D8000742115 /* AppDelegate.h */,
 				E11C562817D75D8000742115 /* AppDelegate.m */,
-				E11A48E917D8E3EA002FF874 /* BaseViewController.h */,
-				E11A48EA17D8E3EA002FF874 /* BaseViewController.m */,
 				E11A48E617D8E237002FF874 /* LoginViewController.h */,
 				E11A48E717D8E237002FF874 /* LoginViewController.m */,
+				E11A492817DB5FB8002FF874 /* QuestionListViewController.h */,
+				E11A492917DB5FB8002FF874 /* QuestionListViewController.m */,
+				E11A493117DB968C002FF874 /* QuestionListViewController.xib */,
+				E11A493317DB9948002FF874 /* QuestionDetailsViewController.h */,
+				E11A493417DB9949002FF874 /* QuestionDetailsViewController.m */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -234,6 +288,7 @@
 				E11C562B17D75D8000742115 /* Default.png in Resources */,
 				E11C562D17D75D8000742115 /* Default@2x.png in Resources */,
 				E11C562F17D75D8000742115 /* Default-568h@2x.png in Resources */,
+				E11A493217DB968D002FF874 /* QuestionListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +342,13 @@
 				E11A491C17D9FB66002FF874 /* QZUser.m in Sources */,
 				E11A491F17D9FB66002FF874 /* QZQuestion.m in Sources */,
 				E11A492317DA373B002FF874 /* QuizAuthClient.m in Sources */,
+				E11A492A17DB5FB9002FF874 /* QuestionListViewController.m in Sources */,
+				E11A492D17DB6FE5002FF874 /* UIViewController+CoreData.m in Sources */,
+				E11A493517DB994A002FF874 /* QuestionDetailsViewController.m in Sources */,
+				E11A493817DCA1A6002FF874 /* BaseTableViewController.m in Sources */,
+				E11A493B17DCA938002FF874 /* UIViewController+Editing.m in Sources */,
+				E11A493E17DCAA30002FF874 /* UIViewController+Indie.m in Sources */,
+				E11A494117DCB9E3002FF874 /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
