@@ -21,10 +21,6 @@
 
 @property (copy, nonatomic) void (^didDismissViewController)(UIViewController *viewController);
 
-@property (strong, nonatomic) QEntryElement *titleElement;
-
-@property (strong, nonatomic) QEntryElement *bodyElement;
-
 @property (strong, nonatomic) NSMutableArray *bindElements;
 
 @end
@@ -40,20 +36,21 @@
     QRootElement *rootElement = [[QRootElement alloc] init];
     rootElement.grouped = YES;
     QSection *textSection = [[QSection alloc] init];
-    self.titleElement = [[QEntryElement alloc]
+    QEntryElement *titleElement = [[QEntryElement alloc]
                                    initWithTitle:nil Value:nil
                                    Placeholder:NSLocalizedString(@"Title", @"Question Title")];
-    self.titleElement.bind = @"textValue:title";
-    self.titleElement.appearance.entryAlignment = NSTextAlignmentCenter;
-    self.bodyElement = [[QEntryElement alloc] initWithTitle:nil
+    titleElement.bind = @"textValue:title";
+    titleElement.appearance = [titleElement.appearance copy];
+    titleElement.appearance.entryAlignment = NSTextAlignmentCenter;
+    QEntryElement *bodyElement = [[QEntryElement alloc] initWithTitle:nil
                                                       Value:self.question.body
                                                 Placeholder:NSLocalizedString(@"Overview", @"Question Overview")];
-    self.bodyElement.bind = @"textValue:body";
-    [textSection addElement:self.titleElement];
-    [textSection addElement:self.bodyElement];
+    bodyElement.bind = @"textValue:body";
+    [textSection addElement:titleElement];
+    [textSection addElement:bodyElement];
 
-    [self.bindElements addObject:self.titleElement];
-    [self.bindElements addObject:self.bodyElement];
+    [self.bindElements addObject:titleElement];
+    [self.bindElements addObject:bodyElement];
 
     [rootElement addSection:textSection];
 
@@ -104,6 +101,7 @@
 {
     [super viewDidLoad];
     [self setupDoneAndCancelButtons];
+    [self updateUI];
 }
 
 - (void)discardUnsavedChanges

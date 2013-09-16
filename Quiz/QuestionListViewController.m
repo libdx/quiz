@@ -51,6 +51,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QZQuestion *question = [self.fetchedResultController objectAtIndexPath:indexPath];
+    QuestionDetailsViewController *detailsController = [[QuestionDetailsViewController alloc]
+                                                        initWithQuestionRemoteID:question.remoteID];
+    [self.navigationController pushViewController:detailsController animated:YES];
+}
+
 - (void)addQuestion:(id)sender
 {
     QuestionDetailsViewController *detailsController = [[QuestionDetailsViewController alloc] init];

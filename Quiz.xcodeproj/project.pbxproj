@@ -35,6 +35,7 @@
 		E11C562D17D75D8000742115 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562C17D75D8000742115 /* Default@2x.png */; };
 		E11C562F17D75D8000742115 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562E17D75D8000742115 /* Default-568h@2x.png */; };
 		E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */; };
+		E1CD999E17E7673300015EDA /* FetchedDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD999D17E7673300015EDA /* FetchedDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,8 @@
 		E11C562C17D75D8000742115 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E11C562E17D75D8000742115 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E11C563717D7607400742115 /* QuizKitModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizKitModel.xcdatamodel; sourceTree = "<group>"; };
+		E1CD999C17E7673300015EDA /* FetchedDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedDataSource.h; sourceTree = "<group>"; };
+		E1CD999D17E7673300015EDA /* FetchedDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedDataSource.m; sourceTree = "<group>"; };
 		FFFA1918393841D68B65A312 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -123,6 +126,8 @@
 			children = (
 				E11A48F017D9F222002FF874 /* UIViewController+Common.h */,
 				E11A48F117D9F222002FF874 /* UIViewController+Common.m */,
+				E1CD999C17E7673300015EDA /* FetchedDataSource.h */,
+				E1CD999D17E7673300015EDA /* FetchedDataSource.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				E11A492D17DB6FE5002FF874 /* UIViewController+CoreData.m in Sources */,
 				E11A493517DB994A002FF874 /* QuestionDetailsViewController.m in Sources */,
 				E11A493817DCA1A6002FF874 /* BaseTableViewController.m in Sources */,
+				E1CD999E17E7673300015EDA /* FetchedDataSource.m in Sources */,
 				E11A493B17DCA938002FF874 /* UIViewController+Editing.m in Sources */,
 				E11A493E17DCAA30002FF874 /* UIViewController+Indie.m in Sources */,
 				E11A494117DCB9E3002FF874 /* BaseNavigationController.m in Sources */,
