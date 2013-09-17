@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseTableViewController.h"
 
-@interface QuestionListViewController : BaseTableViewController
+@interface QuestionListViewController : UITableViewController
 
 @end

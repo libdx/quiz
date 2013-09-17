@@ -1,5 +1,5 @@
 //
-//  FetchedDataSource.h
+//  FetchedTableViewDataSource.h
 //  Quiz
 //
 //  Created by Alexander Ignatenko on 9/16/13.
@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FetchedDataSource : NSObject <UITableViewDataSource, NSFetchedResultsControllerDelegate>
+@interface FetchedTableViewDataSource : NSObject <UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (copy, nonatomic) UITableViewCell *(^cellForRowAtIndexPathBlock)(NSIndexPath *);
+@property (copy, nonatomic) NSString *cellIdentifier;
+@property (copy, nonatomic) void (^configureCellBlock)(id cell, id object);
 
 - (instancetype)initWithTableView:(UITableView *)tableView
          fetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
-       cellForRowAtIndexPathBlock:(UITableViewCell *(^)(NSIndexPath *))cellForRowAtIndexPathBlock;
+                   cellIdentifier:(NSString *)cellIdentifier
+               configureCellBlock:(void (^)(id cell, id object))configureCellBlock;
 
 @end

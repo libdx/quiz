@@ -7,60 +7,15 @@
 //
 
 #import "QuestionDetailsViewController.h"
-#import "UIViewController+Editing.h"
+#import "NavigationItemConfigurator.h"
 
 @interface QuestionDetailsViewController ()
 
 @property (strong, nonatomic) QZQuestion *question;
 
-@property (strong, nonatomic) NSManagedObjectContext *localContext;
-
-@property (nonatomic, getter=isShowingModal) BOOL showingModal;
-
-@property (copy, nonatomic) void (^willDismissViewController)(UIViewController *viewController);
-
-@property (copy, nonatomic) void (^didDismissViewController)(UIViewController *viewController);
-
-@property (strong, nonatomic) NSMutableArray *bindElements;
-
 @end
 
 @implementation QuestionDetailsViewController
-
-@synthesize showingModal = _showingModal;
-@synthesize willDismissViewController = _willDismissViewController;
-@synthesize didDismissViewController = _didDismissViewController;
-
-- (QRootElement *)buildRootWithElements
-{
-    QRootElement *rootElement = [[QRootElement alloc] init];
-    rootElement.grouped = YES;
-    QSection *textSection = [[QSection alloc] init];
-    QEntryElement *titleElement = [[QEntryElement alloc]
-                                   initWithTitle:nil Value:nil
-                                   Placeholder:NSLocalizedString(@"Title", @"Question Title")];
-    titleElement.bind = @"textValue:title";
-    titleElement.appearance = [titleElement.appearance copy];
-    titleElement.appearance.entryAlignment = NSTextAlignmentCenter;
-    QEntryElement *bodyElement = [[QEntryElement alloc] initWithTitle:nil
-                                                      Value:self.question.body
-                                                Placeholder:NSLocalizedString(@"Overview", @"Question Overview")];
-    bodyElement.bind = @"textValue:body";
-    [textSection addElement:titleElement];
-    [textSection addElement:bodyElement];
-
-    [self.bindElements addObject:titleElement];
-    [self.bindElements addObject:bodyElement];
-
-    [rootElement addSection:textSection];
-
-    return rootElement;
-}
-
-- (id)init
-{
-    return [super initWithRoot:[self buildRootWithElements]];
-}
 
 - (id)initWithQuestionRemoteID:(NSNumber *)questionRemoteID
 {
@@ -83,24 +38,10 @@
     return _question;
 }
 
-- (NSManagedObjectContext *)localContext
-{
-    _localContext = [self setupLocalContextWithInstanceVariable:_localContext];
-    _localContext.MR_workingName = @"QuestionDetails";
-    return _localContext;
-}
-
-- (NSMutableArray *)bindElements
-{
-    if (nil == _bindElements)
-        _bindElements = [NSMutableArray array];
-    return _bindElements;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupDoneAndCancelButtons];
+    [[[NavigationItemConfigurator alloc] initWithViewController:self] applyEditStyle];
     [self updateUI];
 }
 
@@ -111,13 +52,10 @@
 
 - (void)updateUI
 {
-    [self.bindElements.copy makeObjectsPerformSelector:@selector(bindToObject:) withObject:self.question];
 }
 
 - (void)updateModel
 {
-    [self.bindElements.copy makeObjectsPerformSelector:@selector(fetchValueUsingBindingsIntoObject:)
-                                            withObject:self.question];
 }
 
 @end

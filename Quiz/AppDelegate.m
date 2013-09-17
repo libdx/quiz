@@ -13,7 +13,6 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "QuestionListViewController.h"
-#import "BaseNavigationController.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) LoginViewController *loginController;
@@ -39,7 +38,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     QuestionListViewController *questionListViewController = [[QuestionListViewController alloc] init];
-    BaseNavigationController *navController = [[BaseNavigationController alloc] initWithRootViewController:questionListViewController];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:questionListViewController];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     if (nil == [QZUser currentUser]) {

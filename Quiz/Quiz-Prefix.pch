@@ -23,5 +23,4 @@
     #import "UIViewController+Common.h"
     #import "QuizKit.h"
     #import "AppDelegate.h"
-    #import "UIViewController+Indie.h"
 #endif

@@ -1,28 +1,53 @@
 //
-//  UIViewController+CoreData.m
+//  FetchedTableViewDataSource.m
 //  Quiz
 //
-//  Created by Alexander Ignatenko on 9/7/13.
+//  Created by Alexander Ignatenko on 9/16/13.
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
-#import "UIViewController+CoreData.h"
+#import "FetchedTableViewDataSource.h"
 
-@implementation UIViewController (CoreData)
+@implementation FetchedTableViewDataSource
 
-@dynamic tableView;
-@dynamic fetchedResultController;
+- (instancetype)initWithTableView:(UITableView *)tableView
+         fetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
+                   cellIdentifier:(NSString *)cellIdentifier
+               configureCellBlock:(void (^)(id cell, id object))configureCellBlock
+{
+    self = [super init];
+    if (nil == self)
+        return nil;
 
-#pragma mark - UITableViewDataSource and UITableViewDelegate
+    self.tableView = tableView;
+    self.fetchedResultsController = fetchedResultsController;
+    self.cellIdentifier = cellIdentifier;
+    self.configureCellBlock = configureCellBlock;
+
+    _fetchedResultsController.delegate = self;
+    _tableView.dataSource = self;
+
+    return self;
+}
+
+#pragma makr - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.fetchedResultController.sections[section] numberOfObjects];
+    return [self.fetchedResultsController.sections[section] numberOfObjects];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.fetchedResultController.sections.count;
+    return self.fetchedResultsController.sections.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    if (nil != self.configureCellBlock)
+        self.configureCellBlock(cell, [self.fetchedResultsController objectAtIndexPath:indexPath]);
+    return cell;
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

@@ -7,8 +7,9 @@
 //
 
 #import "QuickDialogController.h"
+#import "DetailViewController.h"
 
-@interface QuestionDetailsViewController : QuickDialogController
+@interface QuestionDetailsViewController : ManagedDetailViewController
 
 @property (strong, nonatomic) NSNumber *questionRemoteID;
 
