@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  BaseDetailViewController.h
 //  Quiz
 //
 //  Created by Alexander Ignatenko on 9/16/13.
@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UITableViewController
+@interface BaseDetailViewController : UITableViewController
 
 @property (copy, nonatomic) void (^dismissViewControllerBlock)(UIViewController *vc, BOOL didSave);
+
+@property (nonatomic) BOOL shouldDismissOnSave;
+
+@property (nonatomic) BOOL shouldDismissOnCancel;
 
 - (void)save:(id)sender;
 
@@ -33,7 +37,7 @@
 
 @end
 
-@interface ManagedDetailViewController : DetailViewController
+@interface ManagedDetailViewController : BaseDetailViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *localContext;
 

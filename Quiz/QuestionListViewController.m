@@ -7,11 +7,11 @@
 //
 
 #import "QuestionListViewController.h"
-#import "QuestionDetailsViewController.h"
+#import "QuestionDetailViewController.h"
 #import "FetchedTableViewDataSource.h"
-#import "ItemsConfigurator.h"
+#import "BaseTableViewDelegate.h"
 
-@interface QuestionListTableViewDelegate : NSObject <UITableViewDelegate>
+@interface QuestionListTableViewDelegate : BaseTableViewDelegate
 
 @property (copy, nonatomic) void (^didSelectRowBlock)(NSIndexPath *);
 
@@ -56,11 +56,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 {
     [super viewDidLoad];
     self.navigationController.toolbarHidden = NO;
-    ItemsConfigurator *itemsConfigurator = [[ItemsConfigurator alloc] initWithViewController:self];
-    [itemsConfigurator addSystemItem:UIBarButtonSystemItemFlexibleSpace withAction:nil];
-    [itemsConfigurator addSystemItem:UIBarButtonSystemItemAdd withAction:@selector(addQuestion:)];
-    [itemsConfigurator addSystemItem:UIBarButtonSystemItemFlexibleSpace withAction:nil];
-    [itemsConfigurator apply];
+    [self.configuration applyCreatingToolbarWithAction:@selector(addQuestion:)];
 
     NSFetchedResultsController *controller = [QZQuestion MR_fetchAllSortedBy:@"title"
                                                                    ascending:YES
@@ -75,12 +71,19 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                    fetchedResultsController:controller
                                                              cellIdentifier:@"QuestionCell"
                                                          configureCellBlock:configureCellBlock];
+
     self.delegate = [[QuestionListTableViewDelegate alloc] initWithDidSelectRowBlock:^(NSIndexPath *indexPath) {
         QZQuestion *question = [controller objectAtIndexPath:indexPath];
-        QuestionDetailsViewController *detailsController = [[QuestionDetailsViewController alloc]
+        QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc]
                                                             initWithQuestionRemoteID:question.remoteID];
-        [self.navigationController pushViewController:detailsController animated:YES];
+        [self.navigationController pushViewController:detailController animated:YES];
+        detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
+            [vc.navigationController popToRootViewControllerAnimated:YES];
+        };
+        detailController.editing = YES;
+        detailController.shouldDismissOnSave = NO;
     }];
+    self.tableView.delegate = self.delegate;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"QuestionCell"];
 }
 
@@ -91,10 +94,16 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)addQuestion:(id)sender
 {
-    QuestionDetailsViewController *detailsController = [[QuestionDetailsViewController alloc] init];
+    QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc]
-                                               initWithRootViewController:detailsController];
+                                               initWithRootViewController:detailController];
     [self.navigationController presentViewController:navController animated:YES completion:nil];
+    detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
+        [vc dismissViewControllerAnimated:YES completion:nil];
+    };
+    detailController.editing = YES;
+    detailController.shouldDismissOnCancel = YES;
+    detailController.shouldDismissOnSave = YES;
 }
 
 @end

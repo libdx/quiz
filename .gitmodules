@@ -1,0 +1,3 @@
+[submodule "DXTableViewModel"]
+	path = DXTableViewModel
+	url = https://github.com/libdx/DXTableViewModel.git

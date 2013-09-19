@@ -21,6 +21,7 @@
     #import <BlocksKit.h>
     #import <MBProgressHUD.h>
     #import "UIViewController+Common.h"
+    #import "Configuration.h"
     #import "QuizKit.h"
     #import "AppDelegate.h"
 #endif

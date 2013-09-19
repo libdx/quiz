@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SearchController.h"
+#import "BaseSearchController.h"
 
 
 @interface FetchedSearchControllerDelegate : NSObject <SearchControllerDelegate>

@@ -1,5 +1,5 @@
 //
-//  SearchController.h
+//  BaseSearchController.h
 //  Quiz
 //
 //  Created by Alexander Ignatenko on 9/17/13.
@@ -8,20 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@class SearchController;
+@class BaseSearchController;
 
 @protocol SearchControllerDelegate <NSObject>
 
-- (BOOL)searchController:(SearchController *)searchController
+- (BOOL)searchController:(BaseSearchController *)searchController
        shouldReloadTable:(UITableView *)tableView
       forFilterPredicate:(NSPredicate *)predicate;
 
-- (void)searchControllerWillBeginSearch:(SearchController *)searchController;
-- (void)searchControllerDidEndSearch:(SearchController *)searchController;
+- (void)searchControllerWillBeginSearch:(BaseSearchController *)searchController;
+- (void)searchControllerDidEndSearch:(BaseSearchController *)searchController;
 
 @end
 
-@interface SearchController : NSObject <UISearchDisplayDelegate>
+@interface BaseSearchController : NSObject <UISearchDisplayDelegate>
 
 @property (weak, nonatomic) id<SearchControllerDelegate> delegate;
 

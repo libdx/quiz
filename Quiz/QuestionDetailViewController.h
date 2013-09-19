@@ -1,5 +1,5 @@
 //
-//  QuestionDetailsViewController.h
+//  QuestionDetailViewController.h
 //  Quiz
 //
 //  Created by Alexander Ignatenko on 9/7/13.
@@ -7,9 +7,9 @@
 //
 
 #import "QuickDialogController.h"
-#import "DetailViewController.h"
+#import "BaseDetailViewController.h"
 
-@interface QuestionDetailsViewController : ManagedDetailViewController
+@interface QuestionDetailViewController : ManagedDetailViewController
 
 @property (strong, nonatomic) NSNumber *questionRemoteID;
 

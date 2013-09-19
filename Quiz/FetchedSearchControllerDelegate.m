@@ -26,7 +26,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return self;
 }
 
-- (BOOL)searchController:(SearchController *)searchController
+- (BOOL)searchController:(BaseSearchController *)searchController
        shouldReloadTable:(UITableView *)tableView
       forFilterPredicate:(NSPredicate *)predicate;
 {
@@ -37,12 +37,12 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return YES;
 }
 
-- (void)searchControllerWillBeginSearch:(SearchController *)searchController
+- (void)searchControllerWillBeginSearch:(BaseSearchController *)searchController
 {
     _originalPredicate = _fetchedResultsController.fetchRequest.predicate;
 }
 
-- (void)searchControllerDidEndSearch:(SearchController *)searchController
+- (void)searchControllerDidEndSearch:(BaseSearchController *)searchController
 {
     _fetchedResultsController.fetchRequest.predicate = _originalPredicate;
     NSError *error;

@@ -18,7 +18,7 @@
 		E11A492717DA3C79002FF874 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11A492617DA3C79002FF874 /* MobileCoreServices.framework */; };
 		E11A492A17DB5FB9002FF874 /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A492917DB5FB8002FF874 /* QuestionListViewController.m */; };
 		E11A493217DB968D002FF874 /* QuestionListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E11A493117DB968C002FF874 /* QuestionListViewController.xib */; };
-		E11A493517DB994A002FF874 /* QuestionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A493417DB9949002FF874 /* QuestionDetailsViewController.m */; };
+		E11A493517DB994A002FF874 /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E11A493417DB9949002FF874 /* QuestionDetailViewController.m */; };
 		E11C561917D75D8000742115 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561817D75D8000742115 /* UIKit.framework */; };
 		E11C561B17D75D8000742115 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561A17D75D8000742115 /* Foundation.framework */; };
 		E11C561D17D75D8000742115 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11C561C17D75D8000742115 /* CoreGraphics.framework */; };
@@ -29,11 +29,13 @@
 		E11C562D17D75D8000742115 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562C17D75D8000742115 /* Default@2x.png */; };
 		E11C562F17D75D8000742115 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562E17D75D8000742115 /* Default-568h@2x.png */; };
 		E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */; };
+		E18C5F8417EB68A100F076A0 /* BaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */; };
+		E18C5F8617EB697400F076A0 /* libDXTableViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */; };
+		E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8817EB6A3600F076A0 /* Configuration.m */; };
+		E18C5F8C17EB796E00F076A0 /* QuestionDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */; };
 		E1CD999E17E7673300015EDA /* FetchedTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */; };
-		E1CD99A517E7824E00015EDA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99A417E7824E00015EDA /* DetailViewController.m */; };
-		E1CD99A817E79C4F00015EDA /* ItemsConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99A717E79C4F00015EDA /* ItemsConfigurator.m */; };
-		E1CD99AB17E89A1900015EDA /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99AA17E89A1900015EDA /* SearchController.m */; };
-		E1CD99AE17E8A0A700015EDA /* NavigationItemConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99AD17E8A0A700015EDA /* NavigationItemConfigurator.m */; };
+		E1CD99A517E7824E00015EDA /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99A417E7824E00015EDA /* BaseDetailViewController.m */; };
+		E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99AA17E89A1900015EDA /* BaseSearchController.m */; };
 		E1CD99B117E8C4F000015EDA /* FetchedSearchControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99B017E8C4F000015EDA /* FetchedSearchControllerDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +59,8 @@
 		E11A492817DB5FB8002FF874 /* QuestionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListViewController.h; sourceTree = "<group>"; };
 		E11A492917DB5FB8002FF874 /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
 		E11A493117DB968C002FF874 /* QuestionListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListViewController.xib; sourceTree = "<group>"; };
-		E11A493317DB9948002FF874 /* QuestionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailsViewController.h; sourceTree = "<group>"; };
-		E11A493417DB9949002FF874 /* QuestionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailsViewController.m; sourceTree = "<group>"; };
+		E11A493317DB9948002FF874 /* QuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailViewController.h; sourceTree = "<group>"; };
+		E11A493417DB9949002FF874 /* QuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewController.m; sourceTree = "<group>"; };
 		E11C561517D75D8000742115 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11C561817D75D8000742115 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E11C561A17D75D8000742115 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,16 +75,19 @@
 		E11C562C17D75D8000742115 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E11C562E17D75D8000742115 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E11C563717D7607400742115 /* QuizKitModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizKitModel.xcdatamodel; sourceTree = "<group>"; };
+		E18C5F8217EB68A100F076A0 /* BaseTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewDelegate.h; sourceTree = "<group>"; };
+		E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewDelegate.m; sourceTree = "<group>"; };
+		E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libDXTableViewModel.a; path = "DXTableViewModel/build/Debug-iphoneos/libDXTableViewModel.a"; sourceTree = "<group>"; };
+		E18C5F8717EB6A3600F076A0 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		E18C5F8817EB6A3600F076A0 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		E18C5F8A17EB796E00F076A0 /* QuestionDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailViewModel.h; sourceTree = "<group>"; };
+		E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewModel.m; sourceTree = "<group>"; };
 		E1CD999C17E7673300015EDA /* FetchedTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedTableViewDataSource.h; sourceTree = "<group>"; };
 		E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedTableViewDataSource.m; sourceTree = "<group>"; };
-		E1CD99A317E7824E00015EDA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		E1CD99A417E7824E00015EDA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		E1CD99A617E79C4F00015EDA /* ItemsConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsConfigurator.h; sourceTree = "<group>"; };
-		E1CD99A717E79C4F00015EDA /* ItemsConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsConfigurator.m; sourceTree = "<group>"; };
-		E1CD99A917E89A1900015EDA /* SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
-		E1CD99AA17E89A1900015EDA /* SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
-		E1CD99AC17E8A0A700015EDA /* NavigationItemConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationItemConfigurator.h; sourceTree = "<group>"; };
-		E1CD99AD17E8A0A700015EDA /* NavigationItemConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationItemConfigurator.m; sourceTree = "<group>"; };
+		E1CD99A317E7824E00015EDA /* BaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailViewController.h; sourceTree = "<group>"; };
+		E1CD99A417E7824E00015EDA /* BaseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDetailViewController.m; sourceTree = "<group>"; };
+		E1CD99A917E89A1900015EDA /* BaseSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSearchController.h; sourceTree = "<group>"; };
+		E1CD99AA17E89A1900015EDA /* BaseSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSearchController.m; sourceTree = "<group>"; };
 		E1CD99AF17E8C4F000015EDA /* FetchedSearchControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedSearchControllerDelegate.h; sourceTree = "<group>"; };
 		E1CD99B017E8C4F000015EDA /* FetchedSearchControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedSearchControllerDelegate.m; sourceTree = "<group>"; };
 		FFFA1918393841D68B65A312 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -93,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18C5F8617EB697400F076A0 /* libDXTableViewModel.a in Frameworks */,
 				E11A492717DA3C79002FF874 /* MobileCoreServices.framework in Frameworks */,
 				E11A492517DA3C74002FF874 /* SystemConfiguration.framework in Frameworks */,
 				E11C561917D75D8000742115 /* UIKit.framework in Frameworks */,
@@ -110,12 +116,12 @@
 			children = (
 				E11A48F017D9F222002FF874 /* UIViewController+Common.h */,
 				E11A48F117D9F222002FF874 /* UIViewController+Common.m */,
-				E1CD99A617E79C4F00015EDA /* ItemsConfigurator.h */,
-				E1CD99A717E79C4F00015EDA /* ItemsConfigurator.m */,
 				E1CD999C17E7673300015EDA /* FetchedTableViewDataSource.h */,
 				E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */,
 				E1CD99AF17E8C4F000015EDA /* FetchedSearchControllerDelegate.h */,
 				E1CD99B017E8C4F000015EDA /* FetchedSearchControllerDelegate.m */,
+				E18C5F8717EB6A3600F076A0 /* Configuration.h */,
+				E18C5F8817EB6A3600F076A0 /* Configuration.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -123,12 +129,12 @@
 		E11A494317DCBD53002FF874 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				E1CD99AC17E8A0A700015EDA /* NavigationItemConfigurator.h */,
-				E1CD99AD17E8A0A700015EDA /* NavigationItemConfigurator.m */,
-				E1CD99A317E7824E00015EDA /* DetailViewController.h */,
-				E1CD99A417E7824E00015EDA /* DetailViewController.m */,
-				E1CD99A917E89A1900015EDA /* SearchController.h */,
-				E1CD99AA17E89A1900015EDA /* SearchController.m */,
+				E1CD99A317E7824E00015EDA /* BaseDetailViewController.h */,
+				E1CD99A417E7824E00015EDA /* BaseDetailViewController.m */,
+				E1CD99A917E89A1900015EDA /* BaseSearchController.h */,
+				E1CD99AA17E89A1900015EDA /* BaseSearchController.m */,
+				E18C5F8217EB68A100F076A0 /* BaseTableViewDelegate.h */,
+				E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 		E11C561717D75D8000742115 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */,
 				E11A492617DA3C79002FF874 /* MobileCoreServices.framework */,
 				E11A492417DA3C74002FF874 /* SystemConfiguration.framework */,
 				E11C561817D75D8000742115 /* UIKit.framework */,
@@ -178,8 +185,10 @@
 				E11A492817DB5FB8002FF874 /* QuestionListViewController.h */,
 				E11A492917DB5FB8002FF874 /* QuestionListViewController.m */,
 				E11A493117DB968C002FF874 /* QuestionListViewController.xib */,
-				E11A493317DB9948002FF874 /* QuestionDetailsViewController.h */,
-				E11A493417DB9949002FF874 /* QuestionDetailsViewController.m */,
+				E11A493317DB9948002FF874 /* QuestionDetailViewController.h */,
+				E11A493417DB9949002FF874 /* QuestionDetailViewController.m */,
+				E18C5F8A17EB796E00F076A0 /* QuestionDetailViewModel.h */,
+				E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -260,6 +269,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E11C560C17D75D8000742115;
 			productRefGroup = E11C561617D75D8000742115 /* Products */;
@@ -327,19 +337,20 @@
 				E11C562517D75D8000742115 /* main.m in Sources */,
 				E11C562917D75D8000742115 /* AppDelegate.m in Sources */,
 				E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */,
+				E18C5F8C17EB796E00F076A0 /* QuestionDetailViewModel.m in Sources */,
+				E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
 				E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */,
 				E11A491917D9FB65002FF874 /* QZReply.m in Sources */,
 				E11A491C17D9FB66002FF874 /* QZUser.m in Sources */,
 				E1CD99B117E8C4F000015EDA /* FetchedSearchControllerDelegate.m in Sources */,
 				E11A491F17D9FB66002FF874 /* QZQuestion.m in Sources */,
-				E1CD99A817E79C4F00015EDA /* ItemsConfigurator.m in Sources */,
-				E1CD99AE17E8A0A700015EDA /* NavigationItemConfigurator.m in Sources */,
-				E1CD99AB17E89A1900015EDA /* SearchController.m in Sources */,
-				E1CD99A517E7824E00015EDA /* DetailViewController.m in Sources */,
+				E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */,
+				E1CD99A517E7824E00015EDA /* BaseDetailViewController.m in Sources */,
+				E18C5F8417EB68A100F076A0 /* BaseTableViewDelegate.m in Sources */,
 				E11A492317DA373B002FF874 /* QuizAuthClient.m in Sources */,
 				E11A492A17DB5FB9002FF874 /* QuestionListViewController.m in Sources */,
-				E11A493517DB994A002FF874 /* QuestionDetailsViewController.m in Sources */,
+				E11A493517DB994A002FF874 /* QuestionDetailViewController.m in Sources */,
 				E1CD999E17E7673300015EDA /* FetchedTableViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +431,18 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Quiz/Quiz-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFHTTPRequestOperationLogger\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/QuickDialog\"",
+					"\"${PODS_ROOT}/Headers/libffi\"",
+					"\"${SRCROOT}/DXTableViewModel/DXTableViewModel\"",
+				);
 				INFOPLIST_FILE = "Quiz/Quiz-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -433,6 +456,18 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Quiz/Quiz-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFHTTPRequestOperationLogger\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/QuickDialog\"",
+					"\"${PODS_ROOT}/Headers/libffi\"",
+					"\"${SRCROOT}/DXTableViewModel/DXTableViewModel\"",
+				);
 				INFOPLIST_FILE = "Quiz/Quiz-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

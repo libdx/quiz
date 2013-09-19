@@ -1,14 +1,14 @@
 //
-//  SearchController.m
+//  BaseSearchController.m
 //  Quiz
 //
 //  Created by Alexander Ignatenko on 9/17/13.
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
-#import "SearchController.h"
+#import "BaseSearchController.h"
 
-@implementation SearchController
+@implementation BaseSearchController
 {
     NSString *_searchString;
     NSInteger _scopeOption;
