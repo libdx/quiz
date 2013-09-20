@@ -81,7 +81,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
             [vc.navigationController popToRootViewControllerAnimated:YES];
         };
         detailController.editing = YES;
-        detailController.shouldDismissOnSave = NO;
     }];
     self.tableView.delegate = self.delegate;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"QuestionCell"];
@@ -102,8 +101,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         [vc dismissViewControllerAnimated:YES completion:nil];
     };
     detailController.editing = YES;
-    detailController.shouldDismissOnCancel = YES;
-    detailController.shouldDismissOnSave = YES;
 }
 
 @end

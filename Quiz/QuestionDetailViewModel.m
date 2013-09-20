@@ -7,6 +7,31 @@
 //
 
 #import "QuestionDetailViewModel.h"
+#import "EntryCell.h"
+
+@interface QuestionDetailTitleRow : DXTableViewRow
+
+@property (strong, nonatomic) NSString *titleValue;
+@property (strong, nonatomic) NSString *fieldValue;
+
+- (instancetype)init;
+
+@end
+
+@implementation QuestionDetailTitleRow
+
+- (instancetype)init
+{
+    self = [super initWithCellReuseIdentifier:@"TitleCell"];
+    if (nil == self)
+        return nil;
+
+    self.cellClass = [EntryCell class];
+
+    return self;
+}
+
+@end
 
 @interface QuestionDetailViewModel ()
 
@@ -54,10 +79,13 @@
 
     DXTableViewSection *textSection = [[DXTableViewSection alloc] initWithName:@"Text"];
     DXTableViewRow *titleRow = [[DXTableViewRow alloc] initWithCellReuseIdentifier:@"TitleRow"];
-    titleRow.cellClass = [UITableViewCell class];
+    titleRow.cellClass = [EntryCell class];
     titleRow.boundObject = self.question;
-    titleRow.configureCellBlock = ^(DXTableViewRow *row, UITableViewCell *cell) {
-        cell.textLabel.text = weak_self.question.title;
+    titleRow.configureCellBlock = ^(DXTableViewRow *row, EntryCell *cell) {
+//        cell.textLabel.text = weak_self.question.title;
+        cell.titleLabel.text = @"Title";
+        cell.textField.placeholder = @"Title";
+        cell.textField.text = [row.boundObject title];
     };
     titleRow.editingStyle = UITableViewCellEditingStyleNone;
     titleRow.shouldIndentWhileEditingRow = NO;
