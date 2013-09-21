@@ -41,10 +41,12 @@
 
 - (void)updateUI
 {
+    [self.tableView reloadData];
 }
 
 - (void)updateModel
 {
+    [self.viewModel updateModel];
 }
 
 @end

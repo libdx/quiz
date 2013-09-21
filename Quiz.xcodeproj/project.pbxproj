@@ -35,6 +35,7 @@
 		E18C5F8C17EB796E00F076A0 /* QuestionDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */; };
 		E18C5F8F17EB868600F076A0 /* EntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8E17EB868600F076A0 /* EntryCell.m */; };
 		E18C5F9F17ECD12300F076A0 /* ValueTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F9E17ECD12300F076A0 /* ValueTracker.m */; };
+		E18C5FA217EE217200F076A0 /* EntryRow.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5FA117EE217200F076A0 /* EntryRow.m */; };
 		E1CD999E17E7673300015EDA /* FetchedTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */; };
 		E1CD99A517E7824E00015EDA /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99A417E7824E00015EDA /* BaseDetailViewController.m */; };
 		E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99AA17E89A1900015EDA /* BaseSearchController.m */; };
@@ -88,6 +89,8 @@
 		E18C5F8E17EB868600F076A0 /* EntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryCell.m; sourceTree = "<group>"; };
 		E18C5F9D17ECD12300F076A0 /* ValueTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueTracker.h; sourceTree = "<group>"; };
 		E18C5F9E17ECD12300F076A0 /* ValueTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueTracker.m; sourceTree = "<group>"; };
+		E18C5FA017EE217200F076A0 /* EntryRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryRow.h; sourceTree = "<group>"; };
+		E18C5FA117EE217200F076A0 /* EntryRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryRow.m; sourceTree = "<group>"; };
 		E1CD999C17E7673300015EDA /* FetchedTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedTableViewDataSource.h; sourceTree = "<group>"; };
 		E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedTableViewDataSource.m; sourceTree = "<group>"; };
 		E1CD99A317E7824E00015EDA /* BaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailViewController.h; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 				E11A494217DCBC11002FF874 /* Common */,
 				E11A494317DCBD53002FF874 /* Base */,
 				E18C5F9017EB868A00F076A0 /* Cells */,
+				E18C5FA317EE217900F076A0 /* Rows */,
 				E11C562717D75D8000742115 /* AppDelegate.h */,
 				E11C562817D75D8000742115 /* AppDelegate.m */,
 				E11A48E617D8E237002FF874 /* LoginViewController.h */,
@@ -248,6 +252,15 @@
 				E18C5F8E17EB868600F076A0 /* EntryCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		E18C5FA317EE217900F076A0 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				E18C5FA017EE217200F076A0 /* EntryRow.h */,
+				E18C5FA117EE217200F076A0 /* EntryRow.m */,
+			);
+			name = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +380,7 @@
 				E11A491F17D9FB66002FF874 /* QZQuestion.m in Sources */,
 				E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */,
 				E1CD99A517E7824E00015EDA /* BaseDetailViewController.m in Sources */,
+				E18C5FA217EE217200F076A0 /* EntryRow.m in Sources */,
 				E18C5F8417EB68A100F076A0 /* BaseTableViewDelegate.m in Sources */,
 				E11A492317DA373B002FF874 /* QuizAuthClient.m in Sources */,
 				E11A492A17DB5FB9002FF874 /* QuestionListViewController.m in Sources */,
