@@ -19,11 +19,16 @@
 
 - (id)initWithQuestionRemoteID:(NSNumber *)questionRemoteID
 {
-    self = [self init];
+    self = [super init];
     if (self) {
         _questionRemoteID = questionRemoteID;
     }
     return self;
+}
+
+- (void)loadView
+{
+    self.view = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
 }
 
 - (void)viewDidLoad

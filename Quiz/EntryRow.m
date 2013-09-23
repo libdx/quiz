@@ -42,15 +42,9 @@
 
 #pragma mark - ValueTrackerDelegate
 
-static void safeSetObjectForKey(NSMutableDictionary *dict, id object, id<NSCopying> key)
-{
-    if (nil != object)
-        [dict setObject:object forKey:key];
-}
-
 - (void)valueTrackerDidTrackValue:(id<ValueTracker>)tracker
 {
-    safeSetObjectForKey(self.cellData, tracker.value, tracker.tag);
+    [self.cellData safeSetObject:tracker.value forKey:tracker.tag];
 }
 
 @end

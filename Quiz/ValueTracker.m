@@ -19,10 +19,11 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    if (_onlyTrackDidEndEditing) {
-        _value = textView.text;
-        [_delegate valueTrackerDidTrackValue:self];
-    }
+    if (_onlyTrackDidEndEditing)
+        return;
+
+    _value = textView.text;
+    [_delegate valueTrackerDidTrackValue:self];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView

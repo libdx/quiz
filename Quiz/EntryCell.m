@@ -45,7 +45,7 @@
     else
         components = @[self.textField];
 
-    CGRect content = CGRectInset(self.contentView.frame, 10.0f, 0.0f);
+    CGRect content = CGRectInset(self.contentView.bounds, 10.0f, 0.0f);
     CGFloat amount = CGRectGetWidth(content) / components.count;
     for (UIView *view in components) {
         CGRect slice;

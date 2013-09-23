@@ -9,6 +9,8 @@
 #import "QuestionDetailViewModel.h"
 #import "EntryCell.h"
 #import "EntryRow.h"
+#import "TextCell.h"
+#import "TextRow.h"
 
 @interface QuestionDetailViewModel ()
 
@@ -53,15 +55,24 @@
 - (void)buildTableViewModel
 {
     DXTableViewSection *textSection = [[DXTableViewSection alloc] initWithName:@"Text"];
-    DXTableViewRow *titleRow = [[EntryRow alloc] initWithCellReuseIdentifier:@"TitleRow"];
+    EntryRow *titleRow = [[EntryRow alloc] initWithCellReuseIdentifier:@"TitleCell"];
     titleRow.configureCellBlock = ^(DXTableViewRow *row, EntryCell *cell) {
         cell.textField.placeholder = @"Title";
         cell.textField.textAlignment = NSTextAlignmentCenter;
     };
     [titleRow bindObject:self.question keyPaths:@[@"title"] toCellKeyPaths:@[@"textField.text"]];
-    titleRow.editingStyle = UITableViewCellEditingStyleNone;
-    titleRow.shouldIndentWhileEditingRow = NO;
+    TextRow *bodyRow = [[TextRow alloc] initWithCellReuseIdentifier:@"BodyCell"];
+    bodyRow.configureCellBlock = ^(DXTableViewRow *row, TextCell *cell) {
+        cell.textView.font = [UIFont systemFontOfSize:14.0];
+    };
+    bodyRow.rowHeight = 100.0;
+    [bodyRow bindObject:self.question keyPaths:@[@"body"] toCellKeyPaths:@[@"textView.text"]];
     [textSection addRow:titleRow];
+    [textSection addRow:bodyRow];
+    for (DXTableViewRow *row in textSection.rows) {
+        row.editingStyle = UITableViewCellEditingStyleNone;
+        row.shouldIndentWhileEditingRow = NO;
+    }
     [self addSection:textSection];
 }
 

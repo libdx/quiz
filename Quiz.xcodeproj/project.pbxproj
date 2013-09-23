@@ -29,6 +29,9 @@
 		E11C562D17D75D8000742115 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562C17D75D8000742115 /* Default@2x.png */; };
 		E11C562F17D75D8000742115 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562E17D75D8000742115 /* Default-568h@2x.png */; };
 		E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */; };
+		E16234B817EF7724007C3994 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234B717EF7724007C3994 /* TextCell.m */; };
+		E16234BB17EF7832007C3994 /* TextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234BA17EF7832007C3994 /* TextRow.m */; };
+		E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234BD17EF7963007C3994 /* Foundation+Utils.m */; };
 		E18C5F8417EB68A100F076A0 /* BaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */; };
 		E18C5F8617EB697400F076A0 /* libDXTableViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */; };
 		E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8817EB6A3600F076A0 /* Configuration.m */; };
@@ -78,6 +81,12 @@
 		E11C562C17D75D8000742115 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E11C562E17D75D8000742115 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E11C563717D7607400742115 /* QuizKitModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizKitModel.xcdatamodel; sourceTree = "<group>"; };
+		E16234B617EF7724007C3994 /* TextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
+		E16234B717EF7724007C3994 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
+		E16234B917EF7832007C3994 /* TextRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRow.h; sourceTree = "<group>"; };
+		E16234BA17EF7832007C3994 /* TextRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextRow.m; sourceTree = "<group>"; };
+		E16234BC17EF7963007C3994 /* Foundation+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+Utils.h"; sourceTree = "<group>"; };
+		E16234BD17EF7963007C3994 /* Foundation+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Utils.m"; sourceTree = "<group>"; };
 		E18C5F8217EB68A100F076A0 /* BaseTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewDelegate.h; sourceTree = "<group>"; };
 		E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewDelegate.m; sourceTree = "<group>"; };
 		E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDXTableViewModel.a; path = "DXTableViewModel/build/Debug-iphoneos/libDXTableViewModel.a"; sourceTree = "<group>"; };
@@ -133,6 +142,8 @@
 				E18C5F8817EB6A3600F076A0 /* Configuration.m */,
 				E18C5F9D17ECD12300F076A0 /* ValueTracker.h */,
 				E18C5F9E17ECD12300F076A0 /* ValueTracker.m */,
+				E16234BC17EF7963007C3994 /* Foundation+Utils.h */,
+				E16234BD17EF7963007C3994 /* Foundation+Utils.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -250,6 +261,8 @@
 			children = (
 				E18C5F8D17EB868600F076A0 /* EntryCell.h */,
 				E18C5F8E17EB868600F076A0 /* EntryCell.m */,
+				E16234B617EF7724007C3994 /* TextCell.h */,
+				E16234B717EF7724007C3994 /* TextCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -259,6 +272,8 @@
 			children = (
 				E18C5FA017EE217200F076A0 /* EntryRow.h */,
 				E18C5FA117EE217200F076A0 /* EntryRow.m */,
+				E16234B917EF7832007C3994 /* TextRow.h */,
+				E16234BA17EF7832007C3994 /* TextRow.m */,
 			);
 			name = Rows;
 			sourceTree = "<group>";
@@ -372,7 +387,10 @@
 				E18C5F9F17ECD12300F076A0 /* ValueTracker.m in Sources */,
 				E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
+				E16234BB17EF7832007C3994 /* TextRow.m in Sources */,
+				E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */,
 				E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */,
+				E16234B817EF7724007C3994 /* TextCell.m in Sources */,
 				E11A491917D9FB65002FF874 /* QZReply.m in Sources */,
 				E11A491C17D9FB66002FF874 /* QZUser.m in Sources */,
 				E18C5F8F17EB868600F076A0 /* EntryCell.m in Sources */,
