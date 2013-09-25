@@ -14,6 +14,7 @@
 {
     if (nil == _titleLabel) {
         _titleLabel = [[UILabel alloc] init];
+        [self.contentView addSubview:_titleLabel];
     }
     return _titleLabel;
 }
@@ -22,6 +23,7 @@
 {
     if (nil == _textField) {
         _textField = [[UITextField alloc] init];
+        [self.contentView addSubview:_textField];
     }
     return _textField;
 }
@@ -34,10 +36,6 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    for (UIView *view in self.allComponents) {
-        if (view.superview != self.contentView)
-            [self.contentView addSubview:view];
-    }
 
     NSArray *components;
     if (nil != self.titleLabel.text)

@@ -55,7 +55,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.toolbarHidden = NO;
     [self.configuration applyCreatingToolbarWithAction:@selector(addQuestion:)];
 
     NSFetchedResultsController *controller = [QZQuestion MR_fetchAllSortedBy:@"title"
@@ -80,10 +79,18 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
             [vc.navigationController popToRootViewControllerAnimated:YES];
         };
-        detailController.editing = YES;
+//        detailController.editing = YES;
+        detailController.shouldDismissOnCancel = NO;
+        detailController.shouldDismissOnSave = NO;
     }];
     self.tableView.delegate = self.delegate;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"QuestionCell"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (NSString *)nibName

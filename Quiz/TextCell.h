@@ -10,6 +10,7 @@
 
 @interface TextCell : UITableViewCell
 
-@property (strong, nonatomic) UITextView *textView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
 @end

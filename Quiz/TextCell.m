@@ -10,10 +10,20 @@
 
 @implementation TextCell
 
+- (UILabel *)titleLabel
+{
+    if (nil == _titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        [self.contentView addSubview:_titleLabel];
+    }
+    return _titleLabel;
+}
+
 - (UITextView *)textView
 {
     if (nil == _textView) {
         _textView = [[UITextView alloc] init];
+        [self.contentView addSubview:_textView];
     }
     return _textView;
 }
@@ -21,10 +31,25 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    if (self.textView.superview != self.contentView)
-        [self.contentView addSubview:_textView];
 
-    _textView.frame = CGRectInset(self.contentView.bounds, 10.0, 0);
+    NSArray *components;
+    if (nil != self.titleLabel.text)
+        components = @[self.titleLabel, self.textView];
+    else
+        components = @[self.textView];
+
+    CGRect content = CGRectInset(self.contentView.bounds, 10.0, 0);
+    if (nil == self.titleLabel.text) {
+        self.textView.frame = content;
+    } else {
+        [self.titleLabel sizeToFit];
+        CGFloat amount = CGRectGetHeight(self.titleLabel.frame);
+        CGRect slice;
+        CGRect remainder;
+        CGRectDivide(content, &slice, &remainder, amount, CGRectMinYEdge);
+        self.titleLabel.frame = CGRectIntegral(slice);
+        self.textView.frame = CGRectIntegral(remainder);
+    }
 }
 
 @end

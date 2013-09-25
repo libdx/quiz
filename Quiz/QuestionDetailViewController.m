@@ -39,6 +39,12 @@
     self.viewModel.tableView = self.tableView;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = YES;
+}
+
 - (void)discardUnsavedChanges
 {
     [self.localContext refreshObject:self.viewModel.question mergeChanges:NO];
