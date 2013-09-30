@@ -14,4 +14,6 @@
 
 @property (nonatomic, readonly) EntryCell *cell;
 
+@property (copy, nonatomic) NSString *textFieldValue;
+
 @end
