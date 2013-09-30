@@ -31,12 +31,12 @@
 
 - (void)updateCell
 {
-    [super updateCell];
+    self.cell.textField.text = self.textFieldValue;
     if (nil == _tracker) {
         _tracker = [[TextFieldValueTracker alloc] init];
     }
     [_tracker trackValueOfTextField:self.cell.textField];
-    _tracker.tag = @"textField.text";
+    _tracker.tag = @"textFieldValue";
     _tracker.delegate = self;
 }
 
@@ -44,7 +44,7 @@
 
 - (void)valueTrackerDidTrackValue:(id<ValueTracker>)tracker
 {
-    [self.cellData safeSetObject:tracker.value forKey:tracker.tag];
+    [self setValue:tracker.value forKey:tracker.tag];
 }
 
 @end

@@ -31,28 +31,19 @@
 
 - (void)updateCell
 {
-    [super updateCell];
-    self.tracker = [[TextViewValueTracker alloc] init];
-    self.tracker.tag = @"textView.text";
+    self.cell.textView.text = self.textViewValue;
+    if (nil == _tracker)
+        self.tracker = [[TextViewValueTracker alloc] init];
+    self.tracker.tag = @"textViewValue";
     self.cell.textView.delegate = self.tracker;
     self.tracker.delegate = self;
 }
 
 #pragma mark - ValueTrackerDelegate
 
-static void safeSetObjectForKey(NSMutableDictionary *dict, id object, id<NSCopying> key)
-{
-    if (nil != object)
-        [dict setObject:object forKey:key];
-    else
-        [dict removeObjectForKey:key];
-}
-
-#pragma mark - ValueTrackerDelegate
-
 - (void)valueTrackerDidTrackValue:(id<ValueTracker>)tracker
 {
-    [self.cellData safeSetObject:tracker.value forKey:tracker.tag];
+    [self setValue:tracker.value forKey:tracker.tag];
 }
 
 @end

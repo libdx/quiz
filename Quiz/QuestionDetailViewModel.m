@@ -8,9 +8,9 @@
 
 #import "QuestionDetailViewModel.h"
 #import "EntryCell.h"
-#import "EntryRow.h"
 #import "TextCell.h"
-#import "TextRow.h"
+#import "QuestionTitleRow.h"
+#import "QuestionBodyRow.h"
 
 @interface QuestionDetailViewModel ()
 
@@ -57,13 +57,13 @@
     DXTableViewSection *textSection = [[DXTableViewSection alloc] initWithName:@"Text"];
 
     // Title
-    EntryRow *titleRow = [[EntryRow alloc] initWithCellReuseIdentifier:@"TitleCell"];
+    QuestionTitleRow *titleRow = [[QuestionTitleRow alloc] initWithCellReuseIdentifier:@"TitleCell"];
     titleRow.configureCellBlock = ^(DXTableViewRow *row, EntryCell *cell) {
         cell.textField.placeholder = NSLocalizedString(@"Title", @"Text field placeholder");
         cell.textField.textAlignment = NSTextAlignmentCenter;
     };
-    [titleRow bindObject:self.question keyPaths:@[@"title"] toCellKeyPaths:@[@"textField.text"]];
-    TextRow *bodyRow = [[TextRow alloc] initWithCellReuseIdentifier:@"BodyCell"];
+    titleRow.boundObject = self.question;
+    QuestionBodyRow *bodyRow = [[QuestionBodyRow alloc] initWithCellReuseIdentifier:@"BodyCell"];
     bodyRow.configureCellBlock = ^(DXTableViewRow *row, TextCell *cell) {
         cell.titleLabel.text = NSLocalizedString(@"Overview", @"Title for overview section of question form");
         cell.textView.font = [UIFont systemFontOfSize:14.0];
@@ -71,7 +71,7 @@
 
     // Body / Overview
     bodyRow.rowHeight = 140.0;
-    [bodyRow bindObject:self.question keyPaths:@[@"body"] toCellKeyPaths:@[@"textView.text"]];
+    bodyRow.boundObject = self.question;
 
     // Answer
     TextRow *answerRow = [[TextRow alloc] initWithCellReuseIdentifier:@"AnswerCell"];
@@ -80,7 +80,7 @@
         cell.textView.font = [UIFont systemFontOfSize:14.0];
     };
     answerRow.rowHeight = 80.0;
-    [answerRow bindObject:self.question keyPaths:@[@"answer"] toCellKeyPaths:@[@"textView.text"]];
+//    [answerRow bindObject:self.question keyPaths:@[@"answer"] toCellKeyPaths:@[@"textView.text"]];
 
     // Bascket
     

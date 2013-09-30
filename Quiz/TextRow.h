@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "DXTableViewRow.h"
 
 @class TextCell;
@@ -14,5 +14,7 @@
 @interface TextRow : DXTableViewRow
 
 @property (strong, nonatomic) TextCell *cell;
+
+@property (copy, nonatomic) NSString *textViewValue;
 
 @end
