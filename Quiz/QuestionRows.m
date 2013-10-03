@@ -10,7 +10,7 @@
 
 @implementation QuestionTitleRow
 
-- (void)loadDataFromObject
+- (void)didBindObject
 {
     self.textFieldValue = self.boundObject.title;
 }
@@ -24,7 +24,7 @@
 
 @implementation QuestionBodyRow
 
-- (void)loadDataFromObject
+- (void)didBindObject
 {
     self.textViewValue = self.boundObject.body;
 }
@@ -38,7 +38,7 @@
 
 @implementation QuestionAnswerRow
 
-- (void)loadDataFromObject
+- (void)didBindObject
 {
     self.textViewValue = self.boundObject.answer;
 }
