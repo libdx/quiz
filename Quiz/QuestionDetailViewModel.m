@@ -9,6 +9,7 @@
 #import "QuestionDetailViewModel.h"
 #import "EntryCell.h"
 #import "TextCell.h"
+#import "StepperCell.h"
 
 @interface QuestionDetailViewModel ()
 
@@ -99,6 +100,20 @@
         }];
     };
 
+    // Test with stepper
+    DXTableViewRow *stepperRow = [[DXTableViewRow alloc] initWithCellReuseIdentifier:@"StepperCell"];
+    stepperRow.cellNib = [UINib nibWithNibName:@"StepperCell" bundle:nil];
+    [stepperRow bindObject:self.question withKeyPaths:@[@"value"]];
+    stepperRow.configureCellBlock = ^(DXTableViewRow *row, StepperCell *cell) {
+        cell.titleLabel.text = @"Value";
+        cell.valueLabel.text = [NSString stringWithFormat:@"%@", row[@"value"]];
+        cell.stepper.value = [row[@"value"] doubleValue];
+        [row becomeTargetOfControl:cell.stepper forControlEvents:UIControlEventValueChanged withBlock:^(UIStepper *stepper){
+            row[@"value"] = @(stepper.value);
+            cell.valueLabel.text = [NSString stringWithFormat:@"%@", row[@"value"]];
+        }];
+    };
+
     // Bascket
     
     // Level
@@ -110,6 +125,7 @@
     [textSection addRow:titleRow];
     [textSection addRow:bodyRow];
     [textSection addRow:answerRow];
+    [textSection addRow:stepperRow]; //tmp
     for (DXTableViewRow *row in textSection.rows) {
         row.editingStyle = UITableViewCellEditingStyleNone;
         row.shouldIndentWhileEditingRow = NO;
