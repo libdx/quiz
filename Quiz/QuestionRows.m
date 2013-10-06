@@ -7,6 +7,8 @@
 //
 
 #import "QuestionRows.h"
+#import "EntryCell.h"
+#import "TextCell.h"
 
 @implementation QuestionTitleRow
 
@@ -14,6 +16,12 @@
 {
     self.textFieldValue = self.boundObject.title;
 }
+
+//- (void)updateCell
+//{
+//    [super updateCell];
+//    self.cell.textField.textAlignment = NSTextAlignmentCenter;
+//}
 
 - (void)updateObject
 {
@@ -29,6 +37,14 @@
     self.textViewValue = self.boundObject.body;
 }
 
+//- (void)updateCell
+//{
+//    [super updateCell];
+//    self.cell.titleLabel.font = [UIFont systemFontOfSize:14.0];
+//    self.cell.titleLabel.textColor = [UIColor lightGrayColor];
+//    self.cell.textView.font = [UIFont systemFontOfSize:14.0];
+//}
+
 - (void)updateObject
 {
     self.boundObject.body = self.textViewValue;
@@ -42,6 +58,14 @@
 {
     self.textViewValue = self.boundObject.answer;
 }
+
+//- (void)updateCell
+//{
+//    [super updateCell];
+//    self.cell.titleLabel.font = [UIFont systemFontOfSize:14.0];
+//    self.cell.titleLabel.textColor = [UIColor lightGrayColor];
+//    self.cell.textView.font = [UIFont systemFontOfSize:14.0];
+//}
 
 - (void)updateObject
 {

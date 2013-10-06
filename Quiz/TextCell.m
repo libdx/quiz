@@ -43,7 +43,7 @@
         self.textView.frame = content;
     } else {
         [self.titleLabel sizeToFit];
-        CGFloat amount = CGRectGetHeight(self.titleLabel.frame);
+        CGFloat amount = CGRectGetHeight(CGRectInset(self.titleLabel.frame, 0.0, -6.0));
         CGRect slice;
         CGRect remainder;
         CGRectDivide(content, &slice, &remainder, amount, CGRectMinYEdge);

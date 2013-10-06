@@ -57,7 +57,7 @@
 
 - (void)updateModel
 {
-    [self.viewModel updateModel];
+    [self.viewModel updateRowObjects];
 }
 
 @end

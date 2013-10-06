@@ -29,6 +29,12 @@
     return self;
 }
 
+- (void)didBindObject:(id)object withKeyPaths:(NSArray *)keyPaths
+{
+    NSString *keyPath = keyPaths[0];
+    self.textFieldValue = [object valueForKeyPath:keyPath];
+}
+
 - (void)updateCell
 {
     self.cell.textField.text = self.textFieldValue;
@@ -38,6 +44,12 @@
     [_tracker trackValueOfTextField:self.cell.textField];
     _tracker.tag = @"textFieldValue";
     _tracker.delegate = self;
+}
+
+- (void)updateObject
+{
+    NSString *keyPath = self.boundKeyPaths[0];
+    [self.boundObject setValue:self.textFieldValue forKeyPath:keyPath];
 }
 
 #pragma mark - ValueTrackerDelegate
