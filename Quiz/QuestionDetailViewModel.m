@@ -9,8 +9,6 @@
 #import "QuestionDetailViewModel.h"
 #import "EntryCell.h"
 #import "TextCell.h"
-#import "EntryRow.h"
-#import "TextRow.h"
 
 @interface QuestionDetailViewModel ()
 
