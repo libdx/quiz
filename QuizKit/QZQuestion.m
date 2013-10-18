@@ -15,7 +15,7 @@
 
 @dynamic answer;
 @dynamic basket;
-@dynamic body;
+@dynamic overview;
 @dynamic control;
 @dynamic field;
 @dynamic level;

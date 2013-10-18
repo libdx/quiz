@@ -10,7 +10,7 @@
 
 @implementation NSMutableDictionary (Utils)
 
-- (void)safeSetObject:(id)object forKey:(id<NSCopying>)key
+- (void)setSafeObject:(id)object forKey:(id<NSCopying>)key
 {
     if (nil != object)
         [self setObject:object forKey:key];

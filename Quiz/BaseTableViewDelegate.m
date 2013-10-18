@@ -10,4 +10,24 @@
 
 @implementation BaseTableViewDelegate
 
+- (instancetype)initWithTableView:(UITableView *)tableView didSelectRowBlock:(void (^)(NSIndexPath *indexPath))didSelectRowBlock
+{
+    self = [super init];
+    if (nil == self)
+        return nil;
+
+    self.didSelectRowBlock = didSelectRowBlock;
+    self.tableView = tableView;
+    self.tableView.delegate = self;
+
+    return self;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (nil != self.didSelectRowBlock)
+        self.didSelectRowBlock(indexPath);
+}
+
+
 @end

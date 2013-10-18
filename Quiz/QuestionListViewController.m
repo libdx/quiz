@@ -10,32 +10,17 @@
 #import "QuestionDetailViewController.h"
 #import "FetchedTableViewDataSource.h"
 #import "BaseTableViewDelegate.h"
+#import "BaseSearchController.h"
+#import "FetchedSearchControllerDelegate.h"
 
-@interface QuestionListTableViewDelegate : BaseTableViewDelegate
+@interface QuestionListSearchController : BaseSearchController @end
 
-@property (copy, nonatomic) void (^didSelectRowBlock)(NSIndexPath *);
+@implementation QuestionListSearchController
 
-- (instancetype)initWithDidSelectRowBlock:(void (^)(NSIndexPath *indexPath))didSelectRowBlock;
-
-@end
-
-@implementation QuestionListTableViewDelegate
-
-- (instancetype)initWithDidSelectRowBlock:(void (^)(NSIndexPath *indexPath))didSelectRowBlock
+- (NSPredicate *)createFilterPredicateWithSearchString:(NSString *)string scope:(NSInteger)scope
 {
-    self = [super init];
-    if (nil == self)
-        return nil;
-
-    self.didSelectRowBlock = didSelectRowBlock;
-
-    return self;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (nil != self.didSelectRowBlock)
-        self.didSelectRowBlock(indexPath);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[cd] %@", string];
+    return predicate;
 }
 
 @end
@@ -43,8 +28,9 @@
 @interface QuestionListViewController ()
 
 @property (strong, nonatomic) FetchedTableViewDataSource *dataSource;
-
-@property (strong, nonatomic) QuestionListTableViewDelegate *delegate;
+@property (strong, nonatomic) BaseTableViewDelegate *delegate;
+@property (strong, nonatomic) QuestionListSearchController *searchController;
+@property (strong, nonatomic) FetchedSearchControllerDelegate *searchControllerDelegate;
 
 @end
 
@@ -55,6 +41,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self.configuration applyCreatingToolbarWithAction:@selector(addQuestion:)];
 
     NSFetchedResultsController *controller = [QZQuestion MR_fetchAllSortedBy:@"title"
@@ -71,7 +58,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                              cellIdentifier:@"QuestionCell"
                                                          configureCellBlock:configureCellBlock];
 
-    self.delegate = [[QuestionListTableViewDelegate alloc] initWithDidSelectRowBlock:^(NSIndexPath *indexPath) {
+    self.delegate = [[BaseTableViewDelegate alloc] initWithTableView:self.tableView
+                                                   didSelectRowBlock:^(NSIndexPath *indexPath)
+    {
         QZQuestion *question = [controller objectAtIndexPath:indexPath];
         QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc]
                                                             initWithQuestionRemoteID:question.remoteID];
@@ -79,12 +68,19 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
             [vc.navigationController popToRootViewControllerAnimated:YES];
         };
-//        detailController.editing = YES;
         detailController.shouldDismissOnCancel = NO;
         detailController.shouldDismissOnSave = NO;
     }];
-    self.tableView.delegate = self.delegate;
+
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"QuestionCell"];
+
+    self.searchControllerDelegate = [[FetchedSearchControllerDelegate alloc] initWithFetchedResultsController:controller];
+    self.searchController = [[QuestionListSearchController alloc] initWithDelegate:self.searchControllerDelegate];
+    [self.searchController addCellClass:[UITableViewCell class] withCellReuseIdentifier:@"QuestionCell"];
+
+    self.searchDisplayController.delegate = self.searchController;
+    self.searchDisplayController.searchResultsDataSource = self.dataSource;
+    self.searchDisplayController.searchResultsDelegate = self.delegate;
 }
 
 - (void)viewWillAppear:(BOOL)animated

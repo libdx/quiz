@@ -68,19 +68,19 @@
         }];
     };
 
-    // Body / Overview
+    // Overview
     DXTableViewRow *bodyRow = [[DXTableViewRow alloc] initWithCellReuseIdentifier:@"BodyCell"];
     bodyRow.cellClass = [TextCell class];
     bodyRow.rowHeight = 140.0;
-    [bodyRow bindObject:self.question withKeyPaths:@[@"body"]];
+    [bodyRow bindObject:self.question withKeyPaths:@[@"overview"]];
     bodyRow.configureCellBlock = ^(DXTableViewRow *row, TextCell *cell) {
         cell.titleLabel.text = NSLocalizedString(@"Overview", @"Title for overview section of question form");
         cell.titleLabel.font = [UIFont systemFontOfSize:14.0];
         cell.titleLabel.textColor = [UIColor lightGrayColor];
         cell.textView.font = [UIFont systemFontOfSize:14.0];
-        cell.textView.text = row[@"body"];
+        cell.textView.text = row[@"overview"];
         [row becomeDelegateOfTextViewForDidChange:cell.textView withBlock:^(UITextView *textView) {
-            row[@"body"] = textView.text;
+            row[@"overview"] = textView.text;
         }];
     };
 

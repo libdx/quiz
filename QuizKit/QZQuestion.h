@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * answer;
 @property (nonatomic, retain) NSString * basket;
-@property (nonatomic, retain) NSString * body;
+@property (nonatomic, retain) NSString * overview;
 @property (nonatomic, retain) NSNumber * control;
 @property (nonatomic, retain) NSString * field;
 @property (nonatomic, retain) NSNumber * level;

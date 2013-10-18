@@ -10,6 +10,6 @@
 
 @interface NSMutableDictionary (Utils)
 
-- (void)safeSetObject:(id)object forKey:(id<NSCopying>)key;
+- (void)setSafeObject:(id)object forKey:(id<NSCopying>)key;
 
 @end
