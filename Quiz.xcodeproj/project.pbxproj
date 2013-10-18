@@ -31,6 +31,7 @@
 		E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */; };
 		E16234B817EF7724007C3994 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234B717EF7724007C3994 /* TextCell.m */; };
 		E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234BD17EF7963007C3994 /* Foundation+Utils.m */; };
+		E16D75D81811BA5700034E97 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D75D71811BA5700034E97 /* LoginViewModel.m */; };
 		E18C5F8417EB68A100F076A0 /* BaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */; };
 		E18C5F8617EB697400F076A0 /* libDXTableViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */; };
 		E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8817EB6A3600F076A0 /* Configuration.m */; };
@@ -85,6 +86,8 @@
 		E16234B717EF7724007C3994 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
 		E16234BC17EF7963007C3994 /* Foundation+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+Utils.h"; sourceTree = "<group>"; };
 		E16234BD17EF7963007C3994 /* Foundation+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Utils.m"; sourceTree = "<group>"; };
+		E16D75D61811BA5700034E97 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		E16D75D71811BA5700034E97 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		E18C5F8217EB68A100F076A0 /* BaseTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewDelegate.h; sourceTree = "<group>"; };
 		E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewDelegate.m; sourceTree = "<group>"; };
 		E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDXTableViewModel.a; path = "DXTableViewModel/build/Debug-iphoneos/libDXTableViewModel.a"; sourceTree = "<group>"; };
@@ -202,15 +205,8 @@
 				E11A494317DCBD53002FF874 /* Base */,
 				E11C562717D75D8000742115 /* AppDelegate.h */,
 				E11C562817D75D8000742115 /* AppDelegate.m */,
-				E11A48E617D8E237002FF874 /* LoginViewController.h */,
-				E11A48E717D8E237002FF874 /* LoginViewController.m */,
-				E11A492817DB5FB8002FF874 /* QuestionListViewController.h */,
-				E11A492917DB5FB8002FF874 /* QuestionListViewController.m */,
-				E11A493117DB968C002FF874 /* QuestionListViewController.xib */,
-				E11A493317DB9948002FF874 /* QuestionDetailViewController.h */,
-				E11A493417DB9949002FF874 /* QuestionDetailViewController.m */,
-				E18C5F8A17EB796E00F076A0 /* QuestionDetailViewModel.h */,
-				E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */,
+				E16D75D41811BA3800034E97 /* ViewControllers */,
+				E16D75D51811BA4200034E97 /* ViewModels */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -252,6 +248,31 @@
 				E11A492217DA373B002FF874 /* QuizAuthClient.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		E16D75D41811BA3800034E97 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E11A48E617D8E237002FF874 /* LoginViewController.h */,
+				E11A48E717D8E237002FF874 /* LoginViewController.m */,
+				E11A492817DB5FB8002FF874 /* QuestionListViewController.h */,
+				E11A492917DB5FB8002FF874 /* QuestionListViewController.m */,
+				E11A493117DB968C002FF874 /* QuestionListViewController.xib */,
+				E11A493317DB9948002FF874 /* QuestionDetailViewController.h */,
+				E11A493417DB9949002FF874 /* QuestionDetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E16D75D51811BA4200034E97 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E18C5F8A17EB796E00F076A0 /* QuestionDetailViewModel.h */,
+				E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */,
+				E16D75D61811BA5700034E97 /* LoginViewModel.h */,
+				E16D75D71811BA5700034E97 /* LoginViewModel.m */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		E18C5F9017EB868A00F076A0 /* Cells */ = {
@@ -379,6 +400,7 @@
 				E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
 				E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */,
+				E16D75D81811BA5700034E97 /* LoginViewModel.m in Sources */,
 				E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */,
 				E16234B817EF7724007C3994 /* TextCell.m in Sources */,
 				E11A491917D9FB65002FF874 /* QZReply.m in Sources */,
