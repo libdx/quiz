@@ -17,9 +17,9 @@
     return [[UIApplication sharedApplication] delegate];
 }
 
-- (id<Configuration>)configuration
-{
-    return [Configurations currentConfigurationForViewController:self];
-}
+//- (id<Configuration>)configuration
+//{
+//    return [Configurations currentConfigurationForViewController:self];
+//}
 
 @end

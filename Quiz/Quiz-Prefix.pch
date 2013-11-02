@@ -25,4 +25,5 @@
     #import "QuizKit.h"
     #import "AppDelegate.h"
     #import "Foundation+Utils.h"
+    #import "UIKit+Utils.h"
 #endif

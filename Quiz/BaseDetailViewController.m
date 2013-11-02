@@ -30,11 +30,18 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)updateNavBar
 {
-    if (self.isEditing)
-        [self.configuration applyEditingDetailNavBarWithDoneAction:@selector(save:)
-                                                      cancelAction:@selector(cancel:)];
-    else
-        [self.configuration applyDetailNavBar];
+    if (self.isEditing) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                                  initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                  target:self action:@selector(save:)];
+
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+                                                 initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                 target:self action:@selector(cancel:)];
+    } else {
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 }
 
 - (void)viewDidLoad

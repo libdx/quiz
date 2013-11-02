@@ -40,3 +40,9 @@
 - (void)removeReplies:(NSSet *)values;
 
 @end
+
+@interface QZQuestion (QuizKit)
+
+//- (NSArray *)
+
+@end

@@ -10,4 +10,13 @@
 
 @interface LoginViewModel : DXTableViewModel
 
+@property (copy, nonatomic, readonly) NSString *username;
+@property (copy, nonatomic, readonly) NSString *password;
+
+@property (weak, nonatomic) id signInTarget;
+@property (nonatomic) SEL signInAction;
+
+@property (weak, nonatomic) id signUpTarget;
+@property (nonatomic) SEL signUpAction;
+
 @end

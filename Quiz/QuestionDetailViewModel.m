@@ -114,24 +114,61 @@
         }];
     };
 
-    // Bascket
-    
+    // Pickup Section
+    DXTableViewSection *pickupSection = [[DXTableViewSection alloc] initWithName:@"Pickup"];
+
+    // Basket
+    DXTableViewRow *basketRow = [[DXTableViewRow alloc] initWithCellReuseIdentifier:@"BascketCell"];
+    basketRow.cellClass = [UITableViewCell class];
+    [basketRow bindObject:self.question withKeyPath:@"basket"];
+    basketRow.configureCellBlock = ^(DXTableViewRow *row, UITableViewCell *cell) {
+        if (nil != row[@"basket"])
+            cell.textLabel.text = row[@"basket"];
+        else
+            cell.textLabel.text = NSLocalizedString(@"Basket", @"Text to be shown as a button title");
+    };
+    basketRow.didSelectRowBlock = ^(DXTableViewRow *row) {
+        if ([_delegate respondsToSelector:@selector(questionDetailViewModelDidSelectBasketItem:)])
+            [_delegate questionDetailViewModelDidSelectBasketItem:self];
+    };
+
     // Level
+    DXTableViewRow *levelRow = [[DXTableViewRow alloc] initWithCellReuseIdentifier:@"LevelCell"];
+    levelRow.cellClass = [UITableViewCell class];
+    [levelRow bindObject:self.question withKeyPath:@"level"];
+    levelRow.configureCellBlock = ^(DXTableViewRow *row, UITableViewCell *cell) {
+        if (nil != row[@"level"])
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", row[@"level"]];
+        else
+            cell.textLabel.text = NSLocalizedString(@"Level", @"Text to be shown as a button title");
+    };
 
     // Field
+    DXTableViewRow *fieldRow = [[DXTableViewRow alloc] initWithCellReuseIdentifier:@"FieldCell"];
+    fieldRow.cellClass = [UITableViewCell class];
+    [fieldRow bindObject:self.question withKeyPath:@"field"];
+    fieldRow.configureCellBlock = ^(DXTableViewRow *row, UITableViewCell *cell) {
+        if (nil != row[@"field"])
+            cell.textLabel.text = row[@"field"];
+        else
+            cell.textLabel.text = NSLocalizedString(@"Field", @"Text to be shown as a button title");
+    };
+
+    // Control Section
+    //DXTableViewSection *controlSection = [[DXTableViewSection alloc] initWithName:@"Control"];
 
     // Control
 
-    [textSection addRow:titleRow];
-    [textSection addRow:bodyRow];
-    [textSection addRow:answerRow];
-    [textSection addRow:stepperRow]; //tmp
-    for (DXTableViewRow *row in textSection.rows) {
-        row.editingStyle = UITableViewCellEditingStyleNone;
-        row.shouldIndentWhileEditingRow = NO;
-    }
+    [textSection addRows:@[titleRow, bodyRow, answerRow, stepperRow]];
+    [pickupSection addRows:@[basketRow, levelRow, fieldRow]];
+    [self addSections:@[textSection, pickupSection]];
 
-    [self addSection:textSection];
+    for (DXTableViewSection *section in self.sections) {
+        for (DXTableViewRow *row in section.rows) {
+            row.editingStyle = UITableViewCellEditingStyleNone;
+            row.shouldIndentWhileEditingRow = NO;
+        }
+    }
 }
 
 @end

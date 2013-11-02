@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class AppDelegate;
-@protocol Configuration;
+//@protocol Configuration;
 
 @interface UIViewController (Common)
 
 @property (nonatomic, readonly) AppDelegate *appDelegate;
-@property (nonatomic, readonly) id<Configuration> configuration;
+//@property (nonatomic, readonly) id<Configuration> configuration;
 
 @end

@@ -42,7 +42,16 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 {
     [super viewDidLoad];
 
-    [self.configuration applyCreatingToolbarWithAction:@selector(addQuestion:)];
+    NSMutableArray *items = [NSMutableArray array];
+
+    [items addObject:[UIBarButtonItem flexibleSpace]];
+
+    [items addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                   target:self action:@selector(addQuestion:)]];
+
+    [items addObject:[UIBarButtonItem flexibleSpace]];
+
+    self.toolbarItems = items;
 
     NSFetchedResultsController *controller = [QZQuestion MR_fetchAllSortedBy:@"title"
                                                                    ascending:YES
@@ -53,6 +62,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     void (^configureCellBlock)() = ^(UITableViewCell *cell, QZQuestion *question) {
         cell.textLabel.text = question.title;
     };
+
     self.dataSource = [[FetchedTableViewDataSource alloc] initWithTableView:self.tableView
                                                    fetchedResultsController:controller
                                                              cellIdentifier:@"QuestionCell"
@@ -62,14 +72,16 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                    didSelectRowBlock:^(NSIndexPath *indexPath)
     {
         QZQuestion *question = [controller objectAtIndexPath:indexPath];
+
         QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc]
                                                             initWithQuestionRemoteID:question.remoteID];
-        [self.navigationController pushViewController:detailController animated:YES];
         detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
             [vc.navigationController popToRootViewControllerAnimated:YES];
         };
         detailController.shouldDismissOnCancel = NO;
         detailController.shouldDismissOnSave = NO;
+
+        [self.navigationController pushViewController:detailController animated:YES];
     }];
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"QuestionCell"];
@@ -97,13 +109,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)addQuestion:(id)sender
 {
     QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc]
-                                               initWithRootViewController:detailController];
-    [self.navigationController presentViewController:navController animated:YES completion:nil];
+    detailController.editing = YES;
     detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
         [vc dismissViewControllerAnimated:YES completion:nil];
     };
-    detailController.editing = YES;
+
+    UINavigationController *navController = [[UINavigationController alloc]
+                                               initWithRootViewController:detailController];
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
 
 @end

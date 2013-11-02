@@ -29,12 +29,12 @@
 		E11C562D17D75D8000742115 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562C17D75D8000742115 /* Default@2x.png */; };
 		E11C562F17D75D8000742115 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E11C562E17D75D8000742115 /* Default-568h@2x.png */; };
 		E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */; };
+		E146E100182577BB0021EDE3 /* UIKit+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E146E0FF182577BB0021EDE3 /* UIKit+Utils.m */; };
 		E16234B817EF7724007C3994 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234B717EF7724007C3994 /* TextCell.m */; };
 		E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234BD17EF7963007C3994 /* Foundation+Utils.m */; };
 		E16D75D81811BA5700034E97 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D75D71811BA5700034E97 /* LoginViewModel.m */; };
 		E18C5F8417EB68A100F076A0 /* BaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */; };
 		E18C5F8617EB697400F076A0 /* libDXTableViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */; };
-		E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8817EB6A3600F076A0 /* Configuration.m */; };
 		E18C5F8C17EB796E00F076A0 /* QuestionDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */; };
 		E18C5F8F17EB868600F076A0 /* EntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8E17EB868600F076A0 /* EntryCell.m */; };
 		E18C5F9F17ECD12300F076A0 /* ValueTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F9E17ECD12300F076A0 /* ValueTracker.m */; };
@@ -82,6 +82,8 @@
 		E11C562C17D75D8000742115 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		E11C562E17D75D8000742115 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E11C563717D7607400742115 /* QuizKitModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizKitModel.xcdatamodel; sourceTree = "<group>"; };
+		E146E0FE182577BB0021EDE3 /* UIKit+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+Utils.h"; sourceTree = "<group>"; };
+		E146E0FF182577BB0021EDE3 /* UIKit+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+Utils.m"; sourceTree = "<group>"; };
 		E16234B617EF7724007C3994 /* TextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextCell.h; sourceTree = "<group>"; };
 		E16234B717EF7724007C3994 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
 		E16234BC17EF7963007C3994 /* Foundation+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+Utils.h"; sourceTree = "<group>"; };
@@ -91,8 +93,6 @@
 		E18C5F8217EB68A100F076A0 /* BaseTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewDelegate.h; sourceTree = "<group>"; };
 		E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewDelegate.m; sourceTree = "<group>"; };
 		E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDXTableViewModel.a; path = "DXTableViewModel/build/Debug-iphoneos/libDXTableViewModel.a"; sourceTree = "<group>"; };
-		E18C5F8717EB6A3600F076A0 /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
-		E18C5F8817EB6A3600F076A0 /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		E18C5F8A17EB796E00F076A0 /* QuestionDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailViewModel.h; sourceTree = "<group>"; };
 		E18C5F8B17EB796E00F076A0 /* QuestionDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewModel.m; sourceTree = "<group>"; };
 		E18C5F8D17EB868600F076A0 /* EntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryCell.h; sourceTree = "<group>"; };
@@ -140,12 +140,12 @@
 				E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */,
 				E1CD99AF17E8C4F000015EDA /* FetchedSearchControllerDelegate.h */,
 				E1CD99B017E8C4F000015EDA /* FetchedSearchControllerDelegate.m */,
-				E18C5F8717EB6A3600F076A0 /* Configuration.h */,
-				E18C5F8817EB6A3600F076A0 /* Configuration.m */,
 				E18C5F9D17ECD12300F076A0 /* ValueTracker.h */,
 				E18C5F9E17ECD12300F076A0 /* ValueTracker.m */,
 				E16234BC17EF7963007C3994 /* Foundation+Utils.h */,
 				E16234BD17EF7963007C3994 /* Foundation+Utils.m */,
+				E146E0FE182577BB0021EDE3 /* UIKit+Utils.h */,
+				E146E0FF182577BB0021EDE3 /* UIKit+Utils.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				E11C563817D7607400742115 /* QuizKitModel.xcdatamodeld in Sources */,
 				E18C5F8C17EB796E00F076A0 /* QuestionDetailViewModel.m in Sources */,
 				E18C5F9F17ECD12300F076A0 /* ValueTracker.m in Sources */,
-				E18C5F8917EB6A3600F076A0 /* Configuration.m in Sources */,
+				E146E100182577BB0021EDE3 /* UIKit+Utils.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
 				E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */,
 				E16D75D81811BA5700034E97 /* LoginViewModel.m in Sources */,

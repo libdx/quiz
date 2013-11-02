@@ -9,11 +9,13 @@
 #import "QuestionDetailViewController.h"
 #import "QuestionDetailViewModel.h"
 
-@interface QuestionDetailViewController ()
+@interface QuestionDetailViewController () <QuestionDetailViewModelDelegate>
 
 @property (strong, nonatomic) QuestionDetailViewModel *viewModel;
 
 @end
+
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation QuestionDetailViewController
 
@@ -34,8 +36,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.allowsSelectionDuringEditing = YES;
     self.viewModel = [[QuestionDetailViewModel alloc]
                       initWithQuestionRemoteID:self.questionRemoteID context:self.localContext];
+    self.viewModel.delegate = self;
     self.viewModel.tableView = self.tableView;
 }
 
@@ -58,6 +62,13 @@
 - (void)updateModel
 {
     [self.viewModel updateRowObjects];
+}
+
+#pragma mark - QuestionDetailViewModelDelegate
+
+- (void)questionDetailViewModelDidSelectBasketItem:(QuestionDetailViewModel *)viewModel
+{
+    
 }
 
 @end
