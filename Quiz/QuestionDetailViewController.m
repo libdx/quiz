@@ -7,11 +7,12 @@
 //
 
 #import "QuestionDetailViewController.h"
-#import "QuestionDetailViewModel.h"
+#import "QuestionDetailTable.h"
 
-@interface QuestionDetailViewController () <QuestionDetailViewModelDelegate>
+@interface QuestionDetailViewController () <QuestionDetailTableDelegate>
 
-@property (strong, nonatomic) QuestionDetailViewModel *viewModel;
+@property (strong, nonatomic) QuestionDetailTable *table;
+@property (strong, nonatomic) QZQuestion *question;
 
 @end
 
@@ -37,10 +38,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 {
     [super viewDidLoad];
     self.tableView.allowsSelectionDuringEditing = YES;
-    self.viewModel = [[QuestionDetailViewModel alloc]
-                      initWithQuestionRemoteID:self.questionRemoteID context:self.localContext];
-    self.viewModel.delegate = self;
-    self.viewModel.tableView = self.tableView;
+    self.table = [[QuestionDetailTable alloc] initWithQuestion:self.question];
+    self.table.delegate = self;
+    self.table.tableView = self.tableView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -51,7 +51,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)discardUnsavedChanges
 {
-    [self.localContext refreshObject:self.viewModel.question mergeChanges:NO];
+    [self.localContext refreshObject:self.question mergeChanges:NO];
 }
 
 - (void)updateUI
@@ -61,12 +61,25 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)updateModel
 {
-    [self.viewModel updateRowObjects];
+    [self.table updateRowObjects];
+}
+
+- (QZQuestion *)question
+{
+    if (nil == _question) {
+        _question = [QZQuestion MR_findFirstByAttribute:@"remoteID"
+                                              withValue:_questionRemoteID
+                                              inContext:self.localContext];
+        if (nil == _question) {
+            _question = [QZQuestion MR_createInContext:self.localContext];
+        }
+    }
+    return _question;
 }
 
 #pragma mark - QuestionDetailViewModelDelegate
 
-- (void)questionDetailViewModelDidSelectBasketItem:(QuestionDetailViewModel *)viewModel
+- (void)questionDetailTableDidSelectBasketItem:(QuestionDetailTable *)table
 {
     
 }

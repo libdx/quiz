@@ -6,49 +6,29 @@
 //  Copyright (c) 2013 Alexander Ignatenko. All rights reserved.
 //
 
-#import "QuestionDetailViewModel.h"
+#import "QuestionDetailTable.h"
 #import "EntryCell.h"
 #import "TextCell.h"
 #import "StepperCell.h"
 
-@interface QuestionDetailViewModel ()
+@interface QuestionDetailTable ()
 
-@property (strong, nonatomic) NSNumber *questionRemoteID;
-
-@property (strong, nonatomic) NSManagedObjectContext *localContext;
+@property (strong, nonatomic) QZQuestion *question;
 
 @end
 
-@implementation QuestionDetailViewModel
+@implementation QuestionDetailTable
 
-- (instancetype)initWithQuestionRemoteID:(NSNumber *)remoteID context:(NSManagedObjectContext *)context
+- (instancetype)initWithQuestion:(QZQuestion *)question
 {
     self = [super init];
     if (nil == self)
         return nil;
 
-    self.questionRemoteID = remoteID;
-    self.localContext = context;
+    self.question = question;
     [self buildTableViewModel];
 
     return self;
-}
-
-- (QZQuestion *)question
-{
-    if (nil == _question) {
-        _question = [QZQuestion MR_findFirstByAttribute:@"remoteID"
-                                              withValue:_questionRemoteID
-                                              inContext:self.localContext];
-        if (nil == _question) {
-            _question = [QZQuestion MR_createInContext:self.localContext];
-            self.questionNew = YES;
-            // mock data
-//            _question.title = @"Runtime hacks";
-//            _question.body = @"What are your favourite runtime hacks?";
-        }
-    }
-    return _question;
 }
 
 - (void)buildTableViewModel
@@ -128,8 +108,8 @@
             cell.textLabel.text = NSLocalizedString(@"Basket", @"Text to be shown as a button title");
     };
     basketRow.didSelectRowBlock = ^(DXTableViewRow *row) {
-        if ([_delegate respondsToSelector:@selector(questionDetailViewModelDidSelectBasketItem:)])
-            [_delegate questionDetailViewModelDidSelectBasketItem:self];
+        if ([_delegate respondsToSelector:@selector(questionDetailTableDidSelectBasketItem:)])
+            [_delegate questionDetailTableDidSelectBasketItem:self];
     };
 
     // Level

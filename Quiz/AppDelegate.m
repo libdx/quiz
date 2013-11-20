@@ -27,7 +27,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
     [MagicalRecord setupCoreDataStack];
-    
+
     DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
     fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
     fileLogger.logFileManager.maximumNumberOfLogFiles = 7;

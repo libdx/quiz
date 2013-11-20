@@ -21,9 +21,10 @@
     #import <BlocksKit.h>
     #import <MBProgressHUD.h>
     #import "UIViewController+Common.h"
-    #import "Configuration.h"
+    //#import "Configuration.h"
     #import "QuizKit.h"
     #import "AppDelegate.h"
     #import "Foundation+Utils.h"
     #import "UIKit+Utils.h"
+ #define iPhone4Or5 [[UIScreen mainScreen] bounds].size.height == 568 ? 5 : 4
 #endif
