@@ -8,7 +8,6 @@
 
 #import "UIViewController+Common.h"
 #import "AppDelegate.h"
-//#import "Configuration.h"
 
 @implementation UIViewController (Common)
 
@@ -16,10 +15,5 @@
 {
     return [[UIApplication sharedApplication] delegate];
 }
-
-//- (id<Configuration>)configuration
-//{
-//    return [Configurations currentConfigurationForViewController:self];
-//}
 
 @end
