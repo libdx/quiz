@@ -42,16 +42,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 {
     [super viewDidLoad];
 
-    NSMutableArray *items = [NSMutableArray array];
+    weakify(self, weak_self);
 
-    [items addObject:[UIBarButtonItem flexibleSpace]];
-
-    [items addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                   target:self action:@selector(addQuestion:)]];
-
-    [items addObject:[UIBarButtonItem flexibleSpace]];
-
-    self.toolbarItems = items;
+    self.toolbarItems = [UIBarButtonItem creationBarItemsWithTarget:self action:@selector(addQuestion:)];
 
     NSFetchedResultsController *controller = [QZQuestion MR_fetchAllSortedBy:@"title"
                                                                    ascending:YES
@@ -59,7 +52,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                                      groupBy:@"level"
                                                                     delegate:nil];
 
-    void (^configureCellBlock)() = ^(UITableViewCell *cell, QZQuestion *question) {
+    void (^configureCellBlock)() = ^(UITableView *tableView, UITableViewCell *cell, NSIndexPath *indexPath, QZQuestion *question) {
         cell.textLabel.text = question.title;
     };
 
@@ -69,8 +62,10 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
                                                          configureCellBlock:configureCellBlock];
 
     self.delegate = [[BaseTableViewDelegate alloc] initWithTableView:self.tableView
-                                                   didSelectRowBlock:^(NSIndexPath *indexPath)
+                                                   didSelectRowBlock:^(UITableView *tableView, NSIndexPath *indexPath)
     {
+        strongify(self, weak_self);
+
         QZQuestion *question = [controller objectAtIndexPath:indexPath];
 
         QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc]
@@ -78,8 +73,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
             [vc.navigationController popToRootViewControllerAnimated:YES];
         };
-        detailController.shouldDismissOnCancel = NO;
-        detailController.shouldDismissOnSave = NO;
 
         [self.navigationController pushViewController:detailController animated:YES];
     }];

@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class QZReply, QZUser;
+@class QZReply, QZUser, QZBasket;
 
 @interface QZQuestion : NSManagedObject
 
 @property (nonatomic, retain) NSString * answer;
-@property (nonatomic, retain) NSString * basket;
+@property (nonatomic, retain) QZBasket *basket;
 @property (nonatomic, retain) NSString * overview;
 @property (nonatomic, retain) NSNumber * control;
 @property (nonatomic, retain) NSString * field;
@@ -38,11 +38,5 @@
 - (void)removeRepliesObject:(QZReply *)value;
 - (void)addReplies:(NSSet *)values;
 - (void)removeReplies:(NSSet *)values;
-
-@end
-
-@interface QZQuestion (QuizKit)
-
-//- (NSArray *)
 
 @end

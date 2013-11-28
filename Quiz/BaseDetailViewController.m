@@ -22,61 +22,45 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     if (nil == self)
         return nil;
 
-    _shouldDismissOnCancel = YES;
-    _shouldDismissOnSave = YES;
-
     return self;
 }
 
 - (void)updateNavBar
 {
-    if (self.isEditing) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                                  initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                  target:self action:@selector(save:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                              target:self action:@selector(save:)];
 
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
-                                                 initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                 target:self action:@selector(cancel:)];
-    } else {
-        self.navigationItem.rightBarButtonItem = self.editButtonItem;
-        self.navigationItem.leftBarButtonItem = nil;
-    }
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+                                             initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                             target:self action:@selector(cancel:)];
 }
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     [self updateNavBar];
-    [self updateUI];
 }
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super setEditing:editing animated:animated];
-    [self updateNavBar];
+    [super viewWillAppear:animated];
+    [self updateUI];
 }
 
 - (void)save:(id)sender
 {
     [self updateModel];
-    if (self.shouldDismissOnSave) {
-        if (self.dismissViewControllerBlock)
-            self.dismissViewControllerBlock(self, YES);
-    } else {
-        [self setEditing:NO animated:YES];
-    }
+    if (self.dismissViewControllerBlock)
+        self.dismissViewControllerBlock(self, YES);
 }
 
 - (void)cancel:(id)sender
 {
     [self discardUnsavedChanges];
     [self updateUI];
-    if (self.shouldDismissOnCancel) {
-        if (self.dismissViewControllerBlock)
-            self.dismissViewControllerBlock(self, NO);
-    } else {
-        [self setEditing:NO animated:YES];
-    }
+    if (self.dismissViewControllerBlock)
+        self.dismissViewControllerBlock(self, NO);
 }
 
 - (void)discardUnsavedChanges
@@ -103,6 +87,8 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 {
     if (nil == _localContext) {
         _localContext = [NSManagedObjectContext MR_contextWithParent:[NSManagedObjectContext MR_contextForCurrentThread]];
+//        _localContext = [NSManagedObjectContext MR_newMainQueueContext];
+//        _localContext.parentContext = [NSManagedObjectContext MR_contextForCurrentThread];
     }
     return _localContext;
 }

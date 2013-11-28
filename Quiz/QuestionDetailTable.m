@@ -100,10 +100,10 @@
     // Basket
     DXTableViewRow *basketRow = [[DXTableViewRow alloc] initWithCellReuseIdentifier:@"BascketCell"];
     basketRow.cellClass = [UITableViewCell class];
-    [basketRow bindObject:self.question withKeyPath:@"basket"];
+    [basketRow bindObject:self.question withKeyPath:@"basket.title"];
     basketRow.configureCellBlock = ^(DXTableViewRow *row, UITableViewCell *cell) {
-        if (nil != row[@"basket"])
-            cell.textLabel.text = row[@"basket"];
+        if (nil != row[@"basket.title"])
+            cell.textLabel.text = row[@"basket.title"];
         else
             cell.textLabel.text = NSLocalizedString(@"Basket", @"Text to be shown as a button title");
     };

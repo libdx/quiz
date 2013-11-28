@@ -43,9 +43,26 @@
 @synthesize tag = _tag;
 @synthesize delegate = _delegate;
 
+- (instancetype)init
+{
+    self = [super init];
+    if (nil == self)
+        return nil;
+
+    _resignFirstResponderOnReturnKey = NO;
+
+    return self;
+}
+
 - (void)trackValueOfTextField:(UITextField *)textField
 {
     [textField addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+
+- (void)textDidChange:(id)sender
+{
+    _value = [sender text];
+    [_delegate valueTrackerDidTrackValue:self];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -54,10 +71,14 @@
     [_delegate valueTrackerDidTrackValue:self];
 }
 
-- (void)textDidChange:(id)sender
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    _value = [sender text];
-    [_delegate valueTrackerDidTrackValue:self];
+    BOOL res = YES;
+    if (self.resignFirstResponderOnReturnKey) {
+        [textField resignFirstResponder];
+        res = NO;
+    }
+    return res;
 }
 
 @end

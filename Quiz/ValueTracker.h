@@ -19,7 +19,7 @@
 @protocol ValueTracker <NSObject>
 
 @property (nonatomic, readonly) id value;
-@property (copy, nonatomic) NSString *tag;
+@property (copy, nonatomic) id tag;
 @property (weak, nonatomic) id<ValueTrackerDelegate> delegate;
 
 @end
@@ -41,6 +41,9 @@
  Pass text field to a `trackValueOfTextField:` method to track text did change events.
  */
 @interface TextFieldValueTracker : NSObject <TextValueTracker, UITextFieldDelegate>
+
+// Has effect only when tracker is set as delegate of text field. Default is NO.
+@property (nonatomic) BOOL resignFirstResponderOnReturnKey;
 
 - (void)trackValueOfTextField:(UITextField *)textField;
 

@@ -8,6 +8,7 @@
 
 #import "QuestionDetailViewController.h"
 #import "QuestionDetailTable.h"
+#import "BasketsViewController.h"
 
 @interface QuestionDetailViewController () <QuestionDetailTableDelegate>
 
@@ -56,6 +57,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)updateUI
 {
+    [self.table reloadRowBoundData];
     [self.tableView reloadData];
 }
 
@@ -81,7 +83,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 - (void)questionDetailTableDidSelectBasketItem:(QuestionDetailTable *)table
 {
-    
+    [self.navigationController pushViewController:[[BasketsViewController alloc] initWithQuestion:self.question] animated:YES];
 }
 
 @end

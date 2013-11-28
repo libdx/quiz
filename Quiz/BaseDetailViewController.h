@@ -12,10 +12,6 @@
 
 @property (copy, nonatomic) void (^dismissViewControllerBlock)(UIViewController *vc, BOOL didSave);
 
-@property (nonatomic) BOOL shouldDismissOnSave;
-
-@property (nonatomic) BOOL shouldDismissOnCancel;
-
 - (void)save:(id)sender;
 
 - (void)cancel:(id)sender;

@@ -13,11 +13,13 @@
 @property (weak, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (copy, nonatomic) NSString *cellIdentifier;
-@property (copy, nonatomic) void (^configureCellBlock)(id cell, id object);
+@property (copy, nonatomic) void (^configureCellBlock)(UITableView *tableView, id cell, NSIndexPath *indexPath, id object);
+
+@property (nonatomic) BOOL reloadRowOnUpdate; // Default is YES
 
 - (instancetype)initWithTableView:(UITableView *)tableView
          fetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
                    cellIdentifier:(NSString *)cellIdentifier
-               configureCellBlock:(void (^)(id cell, id object))configureCellBlock;
+               configureCellBlock:(void (^)(UITableView *tableView, id cell, NSIndexPath *indexPath, id object))configureCellBlock;
 
 @end

@@ -11,8 +11,9 @@
 @interface BaseTableViewDelegate : NSObject <UITableViewDelegate>
 
 @property (weak, nonatomic) UITableView *tableView;
-@property (copy, nonatomic) void (^didSelectRowBlock)(NSIndexPath *);
+@property (copy, nonatomic) void (^didSelectRowBlock)(UITableView *, NSIndexPath *);
 
-- (instancetype)initWithTableView:(UITableView *)tableView didSelectRowBlock:(void (^)(NSIndexPath *indexPath))didSelectRowBlock;
+- (instancetype)initWithTableView:(UITableView *)tableView
+                didSelectRowBlock:(void (^)(UITableView *tableView, NSIndexPath *indexPath))didSelectRowBlock;
 
 @end

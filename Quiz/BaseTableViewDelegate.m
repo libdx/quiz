@@ -10,7 +10,8 @@
 
 @implementation BaseTableViewDelegate
 
-- (instancetype)initWithTableView:(UITableView *)tableView didSelectRowBlock:(void (^)(NSIndexPath *indexPath))didSelectRowBlock
+- (instancetype)initWithTableView:(UITableView *)tableView
+                didSelectRowBlock:(void (^)(UITableView *tableView, NSIndexPath *indexPath))didSelectRowBlock
 {
     self = [super init];
     if (nil == self)
@@ -26,7 +27,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (nil != self.didSelectRowBlock)
-        self.didSelectRowBlock(indexPath);
+        self.didSelectRowBlock(tableView, indexPath);
 }
 
 

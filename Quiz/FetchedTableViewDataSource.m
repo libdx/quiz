@@ -13,7 +13,7 @@
 - (instancetype)initWithTableView:(UITableView *)tableView
          fetchedResultsController:(NSFetchedResultsController *)fetchedResultsController
                    cellIdentifier:(NSString *)cellIdentifier
-               configureCellBlock:(void (^)(id cell, id object))configureCellBlock
+               configureCellBlock:(void (^)(UITableView *tableView, id cell, NSIndexPath *indexPath, id object))configureCellBlock
 {
     self = [super init];
     if (nil == self)
@@ -23,6 +23,7 @@
     self.fetchedResultsController = fetchedResultsController;
     self.cellIdentifier = cellIdentifier;
     self.configureCellBlock = configureCellBlock;
+    self.reloadRowOnUpdate = YES;
 
     _fetchedResultsController.delegate = self;
     _tableView.dataSource = self;
@@ -46,7 +47,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
     if (nil != self.configureCellBlock)
-        self.configureCellBlock(cell, [self.fetchedResultsController objectAtIndexPath:indexPath]);
+        self.configureCellBlock(tableView, cell, indexPath, [self.fetchedResultsController objectAtIndexPath:indexPath]);
     return cell;
 }
 
@@ -86,7 +87,8 @@
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         case NSFetchedResultsChangeUpdate:
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            if (self.reloadRowOnUpdate)
+                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
         case NSFetchedResultsChangeMove:
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];

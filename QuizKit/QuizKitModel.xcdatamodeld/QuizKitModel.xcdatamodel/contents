@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="QZBasket" representedClassName="QZBasket" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="basket" inverseEntity="QZQuestion" syncable="YES"/>
+    </entity>
     <entity name="QZQuestion" representedClassName="QZQuestion" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="basket" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="control" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="field" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,8 +22,9 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="basket" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="QZBasket" inverseName="question" inverseEntity="QZBasket" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="questions" inverseEntity="QZUser" syncable="YES"/>
-        <relationship name="replies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZReply" inverseName="question" inverseEntity="QZReply" syncable="YES"/>
+        <relationship name="reply" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZReply" inverseName="question" inverseEntity="QZReply" syncable="YES"/>
     </entity>
     <entity name="QZReply" representedClassName="QZReply" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -25,7 +32,7 @@
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="replies" inverseEntity="QZQuestion" syncable="YES"/>
+        <relationship name="question" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="reply" inverseEntity="QZQuestion" syncable="YES"/>
     </entity>
     <entity name="QZUser" representedClassName="QZUser" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -39,5 +46,6 @@
         <element name="QZQuestion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="QZReply" positionX="0" positionY="0" width="0" height="0"/>
         <element name="QZUser" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="QZBasket" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

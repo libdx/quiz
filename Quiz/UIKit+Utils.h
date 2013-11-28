@@ -12,4 +12,6 @@
 
 + (UIBarButtonItem *)flexibleSpace;
 
++ (NSArray *)creationBarItemsWithTarget:(id)target action:(SEL)action;
+
 @end
