@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "QZManagedObject.h"
 
 @class QZReply, QZUser, QZBasket;
 
-@interface QZQuestion : NSManagedObject
+@interface QZQuestion : QZManagedObject
 
 @property (nonatomic, retain) NSString * answer;
 @property (nonatomic, retain) QZBasket *basket;
@@ -28,7 +29,7 @@
 @property (nonatomic, retain) NSNumber * value;
 @property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSDate * updatedAt;
-@property (nonatomic, retain) QZUser *owner;
+@property (nonatomic, retain) QZUser *user;
 @property (nonatomic, retain) NSSet *replies;
 @end
 

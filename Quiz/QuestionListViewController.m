@@ -69,7 +69,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         QZQuestion *question = [controller objectAtIndexPath:indexPath];
 
         QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc]
-                                                            initWithQuestionRemoteID:question.remoteID];
+                                                            initWithQuestionID:question.objectID];
         detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
             [vc.navigationController popToRootViewControllerAnimated:YES];
         };

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "QZManagedObject.h"
 
 @class QZQuestion;
 
-@interface QZReply : NSManagedObject
+@interface QZReply : QZManagedObject
 
 @property (nonatomic, retain) NSNumber * mark;
 @property (nonatomic, retain) NSString * notes;

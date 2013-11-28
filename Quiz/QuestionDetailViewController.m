@@ -21,12 +21,14 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 @implementation QuestionDetailViewController
 
-- (id)initWithQuestionRemoteID:(NSNumber *)questionRemoteID
+- (id)initWithQuestionID:(NSManagedObjectID *)questionID
 {
     self = [super init];
-    if (self) {
-        _questionRemoteID = questionRemoteID;
-    }
+    if (nil == self)
+        return nil;
+
+    _questionID = questionID;
+
     return self;
 }
 
@@ -69,9 +71,8 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (QZQuestion *)question
 {
     if (nil == _question) {
-        _question = [QZQuestion MR_findFirstByAttribute:@"remoteID"
-                                              withValue:_questionRemoteID
-                                              inContext:self.localContext];
+        NSPredicate *byObjectID = [NSPredicate predicateWithFormat:@"SELF = %@", _questionID];
+        _question = [QZQuestion MR_findFirstWithPredicate:byObjectID inContext:self.localContext];
         if (nil == _question) {
             _question = [QZQuestion MR_createInContext:self.localContext];
         }

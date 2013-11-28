@@ -16,6 +16,6 @@
 @dynamic createdAt;
 @dynamic remoteID;
 @dynamic updatedAt;
-@dynamic question;
+@dynamic questions;
 
 @end

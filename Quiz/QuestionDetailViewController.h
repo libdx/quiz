@@ -11,8 +11,8 @@
 
 @interface QuestionDetailViewController : ManagedDetailViewController
 
-@property (strong, nonatomic) NSNumber *questionRemoteID;
+@property (strong, nonatomic) NSManagedObjectID *questionID;
 
-- (id)initWithQuestionRemoteID:(NSNumber *)questionRemoteID;
+- (id)initWithQuestionID:(NSManagedObjectID *)questionID;
 
 @end

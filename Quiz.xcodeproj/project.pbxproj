@@ -42,6 +42,7 @@
 		E1A1A75D1801EB540037AD2C /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A1A75C1801EB540037AD2C /* StepperCell.xib */; };
 		E1A62F6318467C7500E090D8 /* QZBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F6218467C7500E090D8 /* QZBasket.m */; };
 		E1A62F69184680C700E090D8 /* BasketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F68184680C700E090D8 /* BasketsViewController.m */; };
+		E1A62F6C1847C9C600E090D8 /* QZManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */; };
 		E1CD999E17E7673300015EDA /* FetchedTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */; };
 		E1CD99A517E7824E00015EDA /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99A417E7824E00015EDA /* BaseDetailViewController.m */; };
 		E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99AA17E89A1900015EDA /* BaseSearchController.m */; };
@@ -108,6 +109,8 @@
 		E1A62F6218467C7500E090D8 /* QZBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZBasket.m; sourceTree = "<group>"; };
 		E1A62F67184680C700E090D8 /* BasketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasketsViewController.h; sourceTree = "<group>"; };
 		E1A62F68184680C700E090D8 /* BasketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasketsViewController.m; sourceTree = "<group>"; };
+		E1A62F6A1847C9C600E090D8 /* QZManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZManagedObject.h; sourceTree = "<group>"; };
+		E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZManagedObject.m; sourceTree = "<group>"; };
 		E1CD999C17E7673300015EDA /* FetchedTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedTableViewDataSource.h; sourceTree = "<group>"; };
 		E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedTableViewDataSource.m; sourceTree = "<group>"; };
 		E1CD99A317E7824E00015EDA /* BaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailViewController.h; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 			children = (
 				E11A492017D9FCE8002FF874 /* QuizKit.h */,
 				E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */,
+				E1A62F6A1847C9C600E090D8 /* QZManagedObject.h */,
+				E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */,
 				E11A491D17D9FB66002FF874 /* QZQuestion.h */,
 				E11A491E17D9FB66002FF874 /* QZQuestion.m */,
 				E11A491A17D9FB66002FF874 /* QZUser.h */,
@@ -409,6 +414,7 @@
 				E18C5F9F17ECD12300F076A0 /* ValueTracker.m in Sources */,
 				E146E100182577BB0021EDE3 /* UIKit+Utils.m in Sources */,
 				E1A62F6318467C7500E090D8 /* QZBasket.m in Sources */,
+				E1A62F6C1847C9C600E090D8 /* QZManagedObject.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
 				E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */,
 				E16D75D81811BA5700034E97 /* LoginViewModel.m in Sources */,

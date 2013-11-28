@@ -5,7 +5,8 @@
         <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="basket" inverseEntity="QZQuestion" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="basket" inverseEntity="QZQuestion" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="baskets" inverseEntity="QZUser" syncable="YES"/>
     </entity>
     <entity name="QZQuestion" representedClassName="QZQuestion" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,9 +23,9 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="basket" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="QZBasket" inverseName="question" inverseEntity="QZBasket" syncable="YES"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="questions" inverseEntity="QZUser" syncable="YES"/>
+        <relationship name="basket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZBasket" inverseName="questions" inverseEntity="QZBasket" syncable="YES"/>
         <relationship name="reply" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZReply" inverseName="question" inverseEntity="QZReply" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="questions" inverseEntity="QZUser" syncable="YES"/>
     </entity>
     <entity name="QZReply" representedClassName="QZReply" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
@@ -40,7 +41,8 @@
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZQuestion" inverseName="owner" inverseEntity="QZQuestion" syncable="YES"/>
+        <relationship name="baskets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZBasket" inverseName="user" inverseEntity="QZBasket" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZQuestion" inverseName="user" inverseEntity="QZQuestion" syncable="YES"/>
     </entity>
     <elements>
         <element name="QZQuestion" positionX="0" positionY="0" width="0" height="0"/>

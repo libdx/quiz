@@ -28,7 +28,7 @@
 @dynamic value;
 @dynamic createdAt;
 @dynamic updatedAt;
-@dynamic owner;
+@dynamic user;
 @dynamic replies;
 
 @end

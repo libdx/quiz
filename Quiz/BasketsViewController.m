@@ -82,7 +82,7 @@
             [cell.textField becomeFirstResponder];
         }
 
-        if (nil != basket.question)
+        if ([basket.questions containsObject:self.question])
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         else
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -95,15 +95,8 @@
         strongify(self, weak_self);
 
         QZBasket *basket = [controller objectAtIndexPath:indexPath];
-        QZBasket *oldBasket = [self.question.basket MR_inContext:self.localContext];
 
-        // assign basket object to question object in parent context (context of question)
-        self.question.basket = [basket MR_inContext:self.question.managedObjectContext];
-
-        // update basket object with changes from parent context
-        [self.localContext refreshObject:basket mergeChanges:NO];
-        // update previously selected basket from parent context (causes to remove checkmark)
-        [self.localContext refreshObject:oldBasket mergeChanges:NO];
+        self.question.basket = basket;
 
         // force to put or remove checkmark at or from the selected cell
         [tableView reloadRowsAtIndexPaths:tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationFade];
@@ -121,16 +114,13 @@
 - (void)addBasket
 {
     QZBasket *basket = [QZBasket MR_createInContext:self.localContext];
-    basket.createdAt = [NSDate date];
-    basket.updatedAt = [NSDate date];
     self.editingBasketID = basket.objectID;
 }
 
 - (NSManagedObjectContext *)localContext
 {
     if (nil == _localContext) {
-        self.localContext = [NSManagedObjectContext MR_newMainQueueContext];
-        self.localContext.parentContext = self.question.managedObjectContext;
+        return self.question.managedObjectContext;
     }
     return _localContext;
 }

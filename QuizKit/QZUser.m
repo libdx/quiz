@@ -18,6 +18,7 @@
 @dynamic createdAt;
 @dynamic updatedAt;
 @dynamic questions;
+@dynamic baskets;
 
 @end
 

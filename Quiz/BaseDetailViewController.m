@@ -86,9 +86,9 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (NSManagedObjectContext *)localContext
 {
     if (nil == _localContext) {
-        _localContext = [NSManagedObjectContext MR_contextWithParent:[NSManagedObjectContext MR_contextForCurrentThread]];
-//        _localContext = [NSManagedObjectContext MR_newMainQueueContext];
-//        _localContext.parentContext = [NSManagedObjectContext MR_contextForCurrentThread];
+//        _localContext = [NSManagedObjectContext MR_contextWithParent:[NSManagedObjectContext MR_contextForCurrentThread]];
+        _localContext = [NSManagedObjectContext MR_newMainQueueContext];
+        _localContext.parentContext = [NSManagedObjectContext MR_contextForCurrentThread];
     }
     return _localContext;
 }
