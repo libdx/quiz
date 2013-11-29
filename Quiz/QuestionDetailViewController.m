@@ -40,7 +40,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.allowsSelectionDuringEditing = YES;
     self.table = [[QuestionDetailTable alloc] initWithQuestion:self.question];
     self.table.delegate = self;
     self.table.tableView = self.tableView;
@@ -80,7 +79,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
     return _question;
 }
 
-#pragma mark - QuestionDetailViewModelDelegate
+#pragma mark - QuestionDetailTableDelegate
 
 - (void)questionDetailTableDidSelectBasketItem:(QuestionDetailTable *)table
 {

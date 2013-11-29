@@ -7,96 +7,46 @@
 //
 
 #import "LoginViewController.h"
-#import "QZUser.h"
-
-@interface LoginHeaderView : UIView
-@property (strong, nonatomic) UILabel *label;
-@end
+#import "LoginTable.h"
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
-@implementation LoginHeaderView
-
-- (UILabel *)label
-{
-    if (nil == _label) {
-        _label = [[UILabel alloc] init];
-        _label.backgroundColor = [UIColor clearColor];
-        _label.font = [UIFont fontWithName:@"Zapfino" size:40.0f];
-    }
-    return _label;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    if (NO == [self.subviews containsObject:_label])
-        [self addSubview:self.label];
-    [self.label sizeToFit];
-    self.label.center = CGPointMake(floorf(CGRectGetWidth(self.frame) * 0.5),
-                                    floorf(CGRectGetHeight(self.frame) * 0.5));
-}
-
-@end
-
 @interface LoginViewController ()
-@property (strong, nonatomic) QEntryElement *usernameElement;
 @end
 
 @implementation LoginViewController
 
-- (QRootElement *)buildRootWithElements
+- (instancetype)initWithStyle:(UITableViewStyle)style
 {
-    QRootElement *rootElement = [[QRootElement alloc] init];
-    rootElement.grouped = YES;
-    rootElement.controllerName = NSStringFromClass([self class]);
+    self = [super initWithStyle:UITableViewStyleGrouped];
+    if (nil == self)
+        return nil;
 
-    QSection *inputsSection = [[QSection alloc] init];
-    LoginHeaderView *inputsHeader = [[LoginHeaderView alloc] initWithFrame:CGRectMake(0, 0, 10, 150)];
-    inputsHeader.label.text = @"Quiz";
-    inputsHeader.backgroundColor = [UIColor clearColor];
-    inputsSection.headerView = inputsHeader;
-    self.usernameElement = [[QEntryElement alloc] initWithTitle:@"Username" Value:@"" Placeholder:@"Username or Email"];
-    self.usernameElement.key = @"username";
-    self.usernameElement.keyboardType = UIKeyboardTypeEmailAddress;
-    QEntryElement *passwordElement = [[QEntryElement alloc] initWithTitle:@"Password" Value:@"" Placeholder:@"Password"];
-    passwordElement.secureTextEntry = YES;
-    [inputsSection addElement:self.usernameElement];
-    [inputsSection addElement:passwordElement];
-
-    QSection *signInSection = [[QSection alloc] init];
-    QButtonElement *signInButton = [[QButtonElement alloc] initWithTitle:@"Sign In"];
-    signInButton.controllerAction = @"signIn:";
-    [signInSection addElement:signInButton];
-    QSection *signUpSection = [[QSection alloc] init];
-    QButtonElement *signUpButton = [[QButtonElement alloc] initWithTitle:@"Sign Up"];
-    signUpButton.controllerAction = @"signUp:";
-    [signUpSection addElement:signUpButton];
-
-    [rootElement addSection:inputsSection];
-    [rootElement addSection:signInSection];
-    [rootElement addSection:signUpSection];
-
-    return rootElement;
+    return self;
 }
 
-- (id)init
+- (void)viewDidLoad
 {
-    return [super initWithRoot:[self buildRootWithElements]];
+    [super viewDidLoad];
+
+    LoginTable *table = [[LoginTable alloc] initWithTableView:self.tableView];
+    table.signInTarget = self;
+    table.signInAction = @selector(signIn:);
+    table.signUpTarget = self;
+    table.signUpAction = @selector(signUp:);
 }
 
 - (void)signIn:(id)sender
 {
-    NSMutableDictionary *userDict = @{@"username" : @"", @"password" : @""}.mutableCopy;
-    [self.usernameElement fetchValueIntoObject:userDict];
+    NSMutableDictionary *userDict = @{@"username" : [sender username], @"password" : [sender password]}.mutableCopy;
 
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [SVProgressHUD show];
     [[QuizAuthClient defaultClient] authenticateUsername:userDict[@"username"] withPassword:userDict[@"password"] success:^{
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [SVProgressHUD dismiss];
         [self.appDelegate viewControllerDidSignInUser:self];
     } failure:^(NSError *error) {
-        DDLogError(@"Error: %@ %@ %@", THIS_FILE, THIS_METHOD, error);
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        LogError(@"%@", error);
+        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"Username or password is incorrect", @"Login error message")];
     }];
 }
 

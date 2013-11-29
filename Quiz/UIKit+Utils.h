@@ -15,3 +15,10 @@
 + (NSArray *)creationBarItemsWithTarget:(id)target action:(SEL)action;
 
 @end
+
+@interface UITextField (Utils)
+
+- (UITextField *)configureUsernameField;
+- (UITextField *)configureSecureField;
+
+@end

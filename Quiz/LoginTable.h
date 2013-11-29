@@ -8,7 +8,7 @@
 
 #import "DXTableViewModel.h"
 
-@interface LoginViewModel : DXTableViewModel
+@interface LoginTable : DXTableViewModel
 
 @property (copy, nonatomic, readonly) NSString *username;
 @property (copy, nonatomic, readonly) NSString *password;

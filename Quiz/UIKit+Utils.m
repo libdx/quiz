@@ -27,3 +27,21 @@
 }
 
 @end
+
+@implementation UITextField (Utils)
+
+- (UITextField *)configureUsernameField
+{
+    self.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.keyboardType = UIKeyboardTypeEmailAddress;
+    return self;
+}
+
+- (UITextField *)configureSecureField
+{
+    self.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.secureTextEntry = YES;
+    return self;
+}
+
+@end

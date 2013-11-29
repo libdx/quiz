@@ -32,7 +32,7 @@
 		E146E100182577BB0021EDE3 /* UIKit+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E146E0FF182577BB0021EDE3 /* UIKit+Utils.m */; };
 		E16234B817EF7724007C3994 /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234B717EF7724007C3994 /* TextCell.m */; };
 		E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E16234BD17EF7963007C3994 /* Foundation+Utils.m */; };
-		E16D75D81811BA5700034E97 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D75D71811BA5700034E97 /* LoginViewModel.m */; };
+		E16D75D81811BA5700034E97 /* LoginTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D75D71811BA5700034E97 /* LoginTable.m */; };
 		E18C5F8417EB68A100F076A0 /* BaseTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */; };
 		E18C5F8617EB697400F076A0 /* libDXTableViewModel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */; };
 		E18C5F8C17EB796E00F076A0 /* QuestionDetailTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C5F8B17EB796E00F076A0 /* QuestionDetailTable.m */; };
@@ -91,8 +91,8 @@
 		E16234B717EF7724007C3994 /* TextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextCell.m; sourceTree = "<group>"; };
 		E16234BC17EF7963007C3994 /* Foundation+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+Utils.h"; sourceTree = "<group>"; };
 		E16234BD17EF7963007C3994 /* Foundation+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Utils.m"; sourceTree = "<group>"; };
-		E16D75D61811BA5700034E97 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
-		E16D75D71811BA5700034E97 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		E16D75D61811BA5700034E97 /* LoginTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTable.h; sourceTree = "<group>"; };
+		E16D75D71811BA5700034E97 /* LoginTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTable.m; sourceTree = "<group>"; };
 		E18C5F8217EB68A100F076A0 /* BaseTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewDelegate.h; sourceTree = "<group>"; };
 		E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewDelegate.m; sourceTree = "<group>"; };
 		E18C5F8517EB697400F076A0 /* libDXTableViewModel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDXTableViewModel.a; path = "DXTableViewModel/build/Debug-iphoneos/libDXTableViewModel.a"; sourceTree = "<group>"; };
@@ -284,8 +284,8 @@
 			children = (
 				E18C5F8A17EB796E00F076A0 /* QuestionDetailTable.h */,
 				E18C5F8B17EB796E00F076A0 /* QuestionDetailTable.m */,
-				E16D75D61811BA5700034E97 /* LoginViewModel.h */,
-				E16D75D71811BA5700034E97 /* LoginViewModel.m */,
+				E16D75D61811BA5700034E97 /* LoginTable.h */,
+				E16D75D71811BA5700034E97 /* LoginTable.m */,
 			);
 			name = Tables;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				E1A62F6C1847C9C600E090D8 /* QZManagedObject.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
 				E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */,
-				E16D75D81811BA5700034E97 /* LoginViewModel.m in Sources */,
+				E16D75D81811BA5700034E97 /* LoginTable.m in Sources */,
 				E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */,
 				E1A62F69184680C700E090D8 /* BasketsViewController.m in Sources */,
 				E16234B817EF7724007C3994 /* TextCell.m in Sources */,

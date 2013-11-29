@@ -13,13 +13,12 @@
     #import <Foundation/Foundation.h>
     #import <SystemConfiguration/SystemConfiguration.h>
     #import <MobileCoreServices/MobileCoreServices.h>
-    #import <QuickDialog.h>
     #import <CoreData+MagicalRecord.h>
     #import <AFNetworking.h>
     #import <AFHTTPRequestOperationLogger.h>
     #import <DDLog.h>
     #import <BlocksKit.h>
-    #import <MBProgressHUD.h>
+    #import <SVProgressHUD/SVProgressHUD.h>
     #import "UIViewController+Common.h"
     #import "QuizKit.h"
     #import "AppDelegate.h"
@@ -28,4 +27,10 @@
 
     #define weakify(object, reference) __weak typeof(object) reference = object
     #define strongify(object, reference) __strong typeof(reference) object = reference
+
+    #define LogError(...) DDLogError(@"[Error] %@ %@: %@", THIS_FILE, THIS_METHOD, [NSString stringWithFormat:__VA_ARGS__])
+    #define LogWarning(...) DDLogWarn(@"[Warning] %@ %@: %@", THIS_FILE, THIS_METHOD, [NSString stringWithFormat:__VA_ARGS__])
+    #define LogInfo(...) DDLogInfo(@"[Info] %@ %@: %@", THIS_FILE, THIS_METHOD, [NSString stringWithFormat:__VA_ARGS__])
+    #define LogVerbose(...) DDNSLogVerbose(@"%@ %@: %@", THIS_FILE, THIS_METHOD, [NSString stringWithFormat:__VA_ARGS__])
+
 #endif
