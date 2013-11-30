@@ -43,6 +43,7 @@
 		E1A62F6318467C7500E090D8 /* QZBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F6218467C7500E090D8 /* QZBasket.m */; };
 		E1A62F69184680C700E090D8 /* BasketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F68184680C700E090D8 /* BasketsViewController.m */; };
 		E1A62F6C1847C9C600E090D8 /* QZManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */; };
+		E1A62F6F184A6FA200E090D8 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F6E184A6FA200E090D8 /* OptionsViewController.m */; };
 		E1CD999E17E7673300015EDA /* FetchedTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */; };
 		E1CD99A517E7824E00015EDA /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99A417E7824E00015EDA /* BaseDetailViewController.m */; };
 		E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99AA17E89A1900015EDA /* BaseSearchController.m */; };
@@ -111,6 +112,8 @@
 		E1A62F68184680C700E090D8 /* BasketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasketsViewController.m; sourceTree = "<group>"; };
 		E1A62F6A1847C9C600E090D8 /* QZManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZManagedObject.h; sourceTree = "<group>"; };
 		E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZManagedObject.m; sourceTree = "<group>"; };
+		E1A62F6D184A6FA200E090D8 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		E1A62F6E184A6FA200E090D8 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 		E1CD999C17E7673300015EDA /* FetchedTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedTableViewDataSource.h; sourceTree = "<group>"; };
 		E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedTableViewDataSource.m; sourceTree = "<group>"; };
 		E1CD99A317E7824E00015EDA /* BaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailViewController.h; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				E1CD99AA17E89A1900015EDA /* BaseSearchController.m */,
 				E18C5F8217EB68A100F076A0 /* BaseTableViewDelegate.h */,
 				E18C5F8317EB68A100F076A0 /* BaseTableViewDelegate.m */,
+				E1A62F6D184A6FA200E090D8 /* OptionsViewController.h */,
+				E1A62F6E184A6FA200E090D8 /* OptionsViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				E16D75D81811BA5700034E97 /* LoginTable.m in Sources */,
 				E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */,
 				E1A62F69184680C700E090D8 /* BasketsViewController.m in Sources */,
+				E1A62F6F184A6FA200E090D8 /* OptionsViewController.m in Sources */,
 				E16234B817EF7724007C3994 /* TextCell.m in Sources */,
 				E11A491917D9FB65002FF874 /* QZReply.m in Sources */,
 				E11A491C17D9FB66002FF874 /* QZUser.m in Sources */,

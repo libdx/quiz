@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OptionsViewController.h"
 
-@interface BasketsViewController : UITableViewController
+@interface BasketsViewController : OptionsViewController
 
 - (instancetype)initWithQuestion:(QZQuestion *)question;
 

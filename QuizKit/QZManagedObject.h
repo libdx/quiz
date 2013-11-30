@@ -10,4 +10,15 @@
 
 @interface QZManagedObject : NSManagedObject
 
+
++ (id)createInContext:(NSManagedObjectContext *)context;
+
++ (NSString *)entityName;
+
++ (NSString *)demodulizedEntityName;
+
++ (NSString *)propertizeEntityName;
+
++ (NSString *)plurallyPropertizeEntityName;
+
 @end

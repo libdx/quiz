@@ -39,7 +39,7 @@
     // mocking Data
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         sleep(2); // mocking network activity
-        QZUser *user = [QZUser MR_createInContext:localContext];
+        QZUser *user = [QZUser createInContext:localContext];
         user.username = username;
         user.remoteID = [username isEqualToString:@"root"] ? @42 : @911;
         [QZUser setCurrentUser:user];

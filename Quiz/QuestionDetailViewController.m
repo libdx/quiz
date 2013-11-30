@@ -73,7 +73,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
         NSPredicate *byObjectID = [NSPredicate predicateWithFormat:@"SELF = %@", _questionID];
         _question = [QZQuestion MR_findFirstWithPredicate:byObjectID inContext:self.localContext];
         if (nil == _question) {
-            _question = [QZQuestion MR_createInContext:self.localContext];
+            _question = [QZQuestion createInContext:self.localContext];
         }
     }
     return _question;
