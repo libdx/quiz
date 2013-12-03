@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSDate * updatedAt;
 @property (nonatomic, retain) NSSet *questions;
 @property (nonatomic, retain) NSSet *baskets;
+@property (nonatomic, retain) NSSet *fields;
 @end
 
 @interface QZUser (CoreDataGeneratedAccessors)
@@ -34,6 +35,11 @@
 - (void)removeBasketsObject:(QZQuestion *)value;
 - (void)addBaskets:(NSSet *)values;
 - (void)removeBaskets:(NSSet *)values;
+
+- (void)addFieldsObject:(QZQuestion *)value;
+- (void)removeFieldsObject:(QZQuestion *)value;
+- (void)addFields:(NSSet *)values;
+- (void)removeFields:(NSSet *)values;
 
 @end
 

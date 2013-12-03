@@ -9,6 +9,8 @@
 #import "QuestionDetailViewController.h"
 #import "QuestionDetailTable.h"
 #import "BasketsViewController.h"
+#import "FieldsViewController.h"
+#import "ControlsViewController.h"
 
 @interface QuestionDetailViewController () <QuestionDetailTableDelegate>
 
@@ -84,6 +86,16 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)questionDetailTableDidSelectBasketItem:(QuestionDetailTable *)table
 {
     [self.navigationController pushViewController:[[BasketsViewController alloc] initWithQuestion:self.question] animated:YES];
+}
+
+- (void)questionDetailTableDidSelectFieldItem:(QuestionDetailTable *)table
+{
+    [self.navigationController pushViewController:[[FieldsViewController alloc] initWithQuestion:self.question] animated:YES];
+}
+
+- (void)questionDetailTableDidSelectControlItem:(QuestionDetailTable *)table
+{
+    [self.navigationController pushViewController:[[ControlsViewController alloc] initWithQuestion:self.question] animated:YES];
 }
 
 @end

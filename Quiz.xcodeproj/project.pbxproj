@@ -44,6 +44,13 @@
 		E1A62F69184680C700E090D8 /* BasketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F68184680C700E090D8 /* BasketsViewController.m */; };
 		E1A62F6C1847C9C600E090D8 /* QZManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */; };
 		E1A62F6F184A6FA200E090D8 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F6E184A6FA200E090D8 /* OptionsViewController.m */; };
+		E1A62F72184B51EA00E090D8 /* QZField.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F71184B51EA00E090D8 /* QZField.m */; };
+		E1A62F75184B528000E090D8 /* FieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F74184B528000E090D8 /* FieldsViewController.m */; };
+		E1A62F78184CB41F00E090D8 /* ControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F77184CB41F00E090D8 /* ControlCell.m */; };
+		E1A62F7B184CC05400E090D8 /* ControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F7A184CC05400E090D8 /* ControlsViewController.m */; };
+		E1A62F7E184CD75000E090D8 /* QZQuestion+UIKitSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F7D184CD75000E090D8 /* QZQuestion+UIKitSpecific.m */; };
+		E1A62F84184D144300E090D8 /* NSManagedObjectContext+Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F83184D144300E090D8 /* NSManagedObjectContext+Quiz.m */; };
+		E1A62F87184D15BB00E090D8 /* ArrayTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A62F86184D15BB00E090D8 /* ArrayTableViewDataSource.m */; };
 		E1CD999E17E7673300015EDA /* FetchedTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */; };
 		E1CD99A517E7824E00015EDA /* BaseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99A417E7824E00015EDA /* BaseDetailViewController.m */; };
 		E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CD99AA17E89A1900015EDA /* BaseSearchController.m */; };
@@ -114,6 +121,22 @@
 		E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZManagedObject.m; sourceTree = "<group>"; };
 		E1A62F6D184A6FA200E090D8 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
 		E1A62F6E184A6FA200E090D8 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		E1A62F70184B51EA00E090D8 /* QZField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZField.h; sourceTree = "<group>"; };
+		E1A62F71184B51EA00E090D8 /* QZField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZField.m; sourceTree = "<group>"; };
+		E1A62F73184B528000E090D8 /* FieldsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldsViewController.h; sourceTree = "<group>"; };
+		E1A62F74184B528000E090D8 /* FieldsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldsViewController.m; sourceTree = "<group>"; };
+		E1A62F76184CB41F00E090D8 /* ControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCell.h; sourceTree = "<group>"; };
+		E1A62F77184CB41F00E090D8 /* ControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlCell.m; sourceTree = "<group>"; };
+		E1A62F79184CC05400E090D8 /* ControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsViewController.h; sourceTree = "<group>"; };
+		E1A62F7A184CC05400E090D8 /* ControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsViewController.m; sourceTree = "<group>"; };
+		E1A62F7C184CD75000E090D8 /* QZQuestion+UIKitSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QZQuestion+UIKitSpecific.h"; sourceTree = "<group>"; };
+		E1A62F7D184CD75000E090D8 /* QZQuestion+UIKitSpecific.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QZQuestion+UIKitSpecific.m"; sourceTree = "<group>"; };
+		E1A62F7F184D117E00E090D8 /* QZControlViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZControlViews.h; sourceTree = "<group>"; };
+		E1A62F80184D117E00E090D8 /* QZControlViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZControlViews.m; sourceTree = "<group>"; };
+		E1A62F82184D144300E090D8 /* NSManagedObjectContext+Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Quiz.h"; sourceTree = "<group>"; };
+		E1A62F83184D144300E090D8 /* NSManagedObjectContext+Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Quiz.m"; sourceTree = "<group>"; };
+		E1A62F85184D15BB00E090D8 /* ArrayTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayTableViewDataSource.h; sourceTree = "<group>"; };
+		E1A62F86184D15BB00E090D8 /* ArrayTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayTableViewDataSource.m; sourceTree = "<group>"; };
 		E1CD999C17E7673300015EDA /* FetchedTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedTableViewDataSource.h; sourceTree = "<group>"; };
 		E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedTableViewDataSource.m; sourceTree = "<group>"; };
 		E1CD99A317E7824E00015EDA /* BaseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDetailViewController.h; sourceTree = "<group>"; };
@@ -150,6 +173,8 @@
 				E11A48F117D9F222002FF874 /* UIViewController+Common.m */,
 				E1CD999C17E7673300015EDA /* FetchedTableViewDataSource.h */,
 				E1CD999D17E7673300015EDA /* FetchedTableViewDataSource.m */,
+				E1A62F85184D15BB00E090D8 /* ArrayTableViewDataSource.h */,
+				E1A62F86184D15BB00E090D8 /* ArrayTableViewDataSource.m */,
 				E1CD99AF17E8C4F000015EDA /* FetchedSearchControllerDelegate.h */,
 				E1CD99B017E8C4F000015EDA /* FetchedSearchControllerDelegate.m */,
 				E18C5F9D17ECD12300F076A0 /* ValueTracker.h */,
@@ -158,6 +183,10 @@
 				E16234BD17EF7963007C3994 /* Foundation+Utils.m */,
 				E146E0FE182577BB0021EDE3 /* UIKit+Utils.h */,
 				E146E0FF182577BB0021EDE3 /* UIKit+Utils.m */,
+				E1A62F7C184CD75000E090D8 /* QZQuestion+UIKitSpecific.h */,
+				E1A62F7D184CD75000E090D8 /* QZQuestion+UIKitSpecific.m */,
+				E1A62F7F184D117E00E090D8 /* QZControlViews.h */,
+				E1A62F80184D117E00E090D8 /* QZControlViews.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -252,6 +281,8 @@
 			children = (
 				E11A492017D9FCE8002FF874 /* QuizKit.h */,
 				E11C563617D7607400742115 /* QuizKitModel.xcdatamodeld */,
+				E1A62F82184D144300E090D8 /* NSManagedObjectContext+Quiz.h */,
+				E1A62F83184D144300E090D8 /* NSManagedObjectContext+Quiz.m */,
 				E1A62F6A1847C9C600E090D8 /* QZManagedObject.h */,
 				E1A62F6B1847C9C600E090D8 /* QZManagedObject.m */,
 				E11A491D17D9FB66002FF874 /* QZQuestion.h */,
@@ -262,6 +293,8 @@
 				E11A491817D9FB65002FF874 /* QZReply.m */,
 				E1A62F6118467C7500E090D8 /* QZBasket.h */,
 				E1A62F6218467C7500E090D8 /* QZBasket.m */,
+				E1A62F70184B51EA00E090D8 /* QZField.h */,
+				E1A62F71184B51EA00E090D8 /* QZField.m */,
 				E11A492117DA373A002FF874 /* QuizAuthClient.h */,
 				E11A492217DA373B002FF874 /* QuizAuthClient.m */,
 			);
@@ -280,6 +313,10 @@
 				E11A493417DB9949002FF874 /* QuestionDetailViewController.m */,
 				E1A62F67184680C700E090D8 /* BasketsViewController.h */,
 				E1A62F68184680C700E090D8 /* BasketsViewController.m */,
+				E1A62F73184B528000E090D8 /* FieldsViewController.h */,
+				E1A62F74184B528000E090D8 /* FieldsViewController.m */,
+				E1A62F79184CC05400E090D8 /* ControlsViewController.h */,
+				E1A62F7A184CC05400E090D8 /* ControlsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -305,6 +342,8 @@
 				E1A1A7571801EAE40037AD2C /* StepperCell.h */,
 				E1A1A7581801EAE40037AD2C /* StepperCell.m */,
 				E1A1A75C1801EB540037AD2C /* StepperCell.xib */,
+				E1A62F76184CB41F00E090D8 /* ControlCell.h */,
+				E1A62F77184CB41F00E090D8 /* ControlCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -418,11 +457,16 @@
 				E18C5F8C17EB796E00F076A0 /* QuestionDetailTable.m in Sources */,
 				E18C5F9F17ECD12300F076A0 /* ValueTracker.m in Sources */,
 				E146E100182577BB0021EDE3 /* UIKit+Utils.m in Sources */,
+				E1A62F7B184CC05400E090D8 /* ControlsViewController.m in Sources */,
+				E1A62F72184B51EA00E090D8 /* QZField.m in Sources */,
 				E1A62F6318467C7500E090D8 /* QZBasket.m in Sources */,
 				E1A62F6C1847C9C600E090D8 /* QZManagedObject.m in Sources */,
 				E11A48E817D8E237002FF874 /* LoginViewController.m in Sources */,
 				E16234BE17EF7963007C3994 /* Foundation+Utils.m in Sources */,
+				E1A62F84184D144300E090D8 /* NSManagedObjectContext+Quiz.m in Sources */,
+				E1A62F78184CB41F00E090D8 /* ControlCell.m in Sources */,
 				E16D75D81811BA5700034E97 /* LoginTable.m in Sources */,
+				E1A62F87184D15BB00E090D8 /* ArrayTableViewDataSource.m in Sources */,
 				E11A48F217D9F222002FF874 /* UIViewController+Common.m in Sources */,
 				E1A62F69184680C700E090D8 /* BasketsViewController.m in Sources */,
 				E1A62F6F184A6FA200E090D8 /* OptionsViewController.m in Sources */,
@@ -430,6 +474,7 @@
 				E11A491917D9FB65002FF874 /* QZReply.m in Sources */,
 				E11A491C17D9FB66002FF874 /* QZUser.m in Sources */,
 				E18C5F8F17EB868600F076A0 /* EntryCell.m in Sources */,
+				E1A62F7E184CD75000E090D8 /* QZQuestion+UIKitSpecific.m in Sources */,
 				E1CD99B117E8C4F000015EDA /* FetchedSearchControllerDelegate.m in Sources */,
 				E11A491F17D9FB66002FF874 /* QZQuestion.m in Sources */,
 				E1CD99AB17E89A1900015EDA /* BaseSearchController.m in Sources */,
@@ -438,6 +483,7 @@
 				E11A492317DA373B002FF874 /* QuizAuthClient.m in Sources */,
 				E11A492A17DB5FB9002FF874 /* QuestionListViewController.m in Sources */,
 				E11A493517DB994A002FF874 /* QuestionDetailViewController.m in Sources */,
+				E1A62F75184B528000E090D8 /* FieldsViewController.m in Sources */,
 				E1CD999E17E7673300015EDA /* FetchedTableViewDataSource.m in Sources */,
 				E1A1A7591801EAE40037AD2C /* StepperCell.m in Sources */,
 			);

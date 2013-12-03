@@ -10,15 +10,15 @@
 #import <CoreData/CoreData.h>
 #import "QZManagedObject.h"
 
-@class QZReply, QZUser, QZBasket;
+@class QZReply, QZUser, QZBasket, QZField;
 
 @interface QZQuestion : QZManagedObject
 
 @property (nonatomic, retain) NSString * answer;
 @property (nonatomic, retain) QZBasket *basket;
 @property (nonatomic, retain) NSString * overview;
-@property (nonatomic, retain) NSNumber * control;
-@property (nonatomic, retain) NSString * field;
+@property (nonatomic, retain) NSNumber * control; // NSNumber with QZControlType
+@property (nonatomic, retain) QZField * field;
 @property (nonatomic, retain) NSNumber * level;
 @property (nonatomic, retain) NSNumber * max;
 @property (nonatomic, retain) NSNumber * min;
@@ -41,3 +41,10 @@
 - (void)removeReplies:(NSSet *)values;
 
 @end
+
+typedef NS_ENUM (NSInteger, QZControlType) {
+    QZControlTypeNone,
+    QZControlTypeDiscret,
+    QZControlTypeContinuous,
+    QZControlTypeBinary
+};

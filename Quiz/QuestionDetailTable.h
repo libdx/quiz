@@ -23,7 +23,7 @@
 @optional
 
 - (void)questionDetailTableDidSelectBasketItem:(QuestionDetailTable *)table;
-- (void)questionDetailTableDidSelectLevelItem:(QuestionDetailTable *)table;
+//- (void)questionDetailTableDidSelectLevelItem:(QuestionDetailTable *)table;
 - (void)questionDetailTableDidSelectFieldItem:(QuestionDetailTable *)table;
 - (void)questionDetailTableDidSelectControlItem:(QuestionDetailTable *)table;
 

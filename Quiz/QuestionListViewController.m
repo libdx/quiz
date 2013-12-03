@@ -102,7 +102,6 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void)addQuestion:(id)sender
 {
     QuestionDetailViewController *detailController = [[QuestionDetailViewController alloc] init];
-    detailController.editing = YES;
     detailController.dismissViewControllerBlock = ^(UIViewController *vc, BOOL didSave) {
         [vc dismissViewControllerAnimated:YES completion:nil];
     };

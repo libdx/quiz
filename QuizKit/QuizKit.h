@@ -10,5 +10,6 @@
 #import "QZReply.h"
 #import "QZUser.h"
 #import "QZBasket.h"
+#import "QZField.h"
 
 #import "QuizAuthClient.h"

@@ -8,11 +8,18 @@
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="basket" inverseEntity="QZQuestion" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="baskets" inverseEntity="QZUser" syncable="YES"/>
     </entity>
+    <entity name="QZField" representedClassName="QZField" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="QZQuestion" inverseName="field" inverseEntity="QZQuestion" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="fields" inverseEntity="QZUser" syncable="YES"/>
+    </entity>
     <entity name="QZQuestion" representedClassName="QZQuestion" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="control" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="field" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="max" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="min" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
@@ -24,6 +31,7 @@
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="basket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZBasket" inverseName="questions" inverseEntity="QZBasket" syncable="YES"/>
+        <relationship name="field" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZField" inverseName="questions" inverseEntity="QZField" syncable="YES"/>
         <relationship name="reply" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZReply" inverseName="question" inverseEntity="QZReply" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QZUser" inverseName="questions" inverseEntity="QZUser" syncable="YES"/>
     </entity>
@@ -42,12 +50,14 @@
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="baskets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZBasket" inverseName="user" inverseEntity="QZBasket" syncable="YES"/>
+        <relationship name="fields" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZField" inverseName="user" inverseEntity="QZField" syncable="YES"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="QZQuestion" inverseName="user" inverseEntity="QZQuestion" syncable="YES"/>
     </entity>
     <elements>
+        <element name="QZBasket" positionX="0" positionY="0" width="0" height="0"/>
         <element name="QZQuestion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="QZReply" positionX="0" positionY="0" width="0" height="0"/>
         <element name="QZUser" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="QZBasket" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="QZField" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

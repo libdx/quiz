@@ -19,6 +19,7 @@
 @dynamic updatedAt;
 @dynamic questions;
 @dynamic baskets;
+@dynamic fields;
 
 @end
 

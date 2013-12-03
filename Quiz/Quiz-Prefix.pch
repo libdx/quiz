@@ -24,6 +24,8 @@
     #import "AppDelegate.h"
     #import "Foundation+Utils.h"
     #import "UIKit+Utils.h"
+    #import "QZQuestion+UIKitSpecific.h"
+    #import "NSManagedObjectContext+Quiz.h"
 
     #define weakify(object, reference) __weak typeof(object) reference = object
     #define strongify(object, reference) __strong typeof(reference) object = reference
