@@ -171,12 +171,12 @@
     [controlSection addRow:controlRow];
     [self addSections:@[textSection, pickupSection, controlSection]];
 
-//    for (DXTableViewSection *section in self.sections) {
-//        for (DXTableViewRow *row in section.rows) {
-//            row.editingStyle = UITableViewCellEditingStyleNone;
+    for (DXTableViewSection *section in self.sections) {
+        for (DXTableViewRow *row in section.rows) {
+            row.editingStyle = UITableViewCellEditingStyleNone;
 //            row.shouldIndentWhileEditingRow = NO;
-//        }
-//    }
+        }
+    }
 }
 
 @end

@@ -17,7 +17,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *prototypesContext;
 @property (strong, nonatomic) ArrayTableViewDataSource *dataSource;
 @property (strong, nonatomic) BaseTableViewDelegate *delegate;
-@property (strong, nonatomic) QZQuestion *selectedPrototype;
 
 @end
 
@@ -68,7 +67,7 @@
                            strongify(self, weak_self);
                            cell.controlView = prototype.controlView;
                            cell.enabled = NO;
-                           if (prototype == self.selectedPrototype)
+                           if ([self.question.control isEqualToNumber:prototype.control])
                                cell.accessoryType = UITableViewCellAccessoryCheckmark;
                            else
                                cell.accessoryType = UITableViewCellAccessoryNone;
@@ -78,8 +77,9 @@
                                                    didSelectRowBlock:
                      ^(UITableView *tableView, NSIndexPath *indexPath) {
                          strongify(self, weak_self);
-                         self.selectedPrototype = self.dataSource.array[indexPath.row];
-                         [tableView reloadRowsAtIndexPaths:tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationFade];
+                         self.question.control = [self.dataSource.array[indexPath.row] control];
+                         [tableView reloadRowsAtIndexPaths:tableView.indexPathsForVisibleRows
+                                          withRowAnimation:UITableViewRowAnimationFade];
                      }];
 
     [self.tableView registerClass:[ControlCell class] forCellReuseIdentifier:@"PrototypeControlCell"];

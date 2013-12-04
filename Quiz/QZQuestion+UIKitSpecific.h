@@ -10,8 +10,6 @@
 
 @interface QZQuestion (UIKitSpecific)
 
-//+ (UIView *)controlViewForType:(QZControlType)type;
-
-- (UIView *)controlView;
+- (UIControl *)controlView;
 
 @end

@@ -10,8 +10,6 @@
 
 @interface ControlCell ()
 
-//@property (strong, nonatomic) UIView *controlView;
-
 @end
 
 @implementation ControlCell
@@ -33,7 +31,7 @@
     self.contentView.userInteractionEnabled = _enabled;
 }
 
-- (void)setControlView:(UIView *)controlView
+- (void)setControlView:(UIControl *)controlView
 {
     if(_controlView != controlView) {
         [_controlView removeFromSuperview];
@@ -41,20 +39,6 @@
         [self.contentView addSubview:_controlView];
     }
 }
-
-//- (void)setControlType:(QZControlType)controlType
-//{
-//    if (_controlType != controlType || controlType == QZControlTypeNone) {
-//        _controlType = controlType;
-//        if (_controlType == QZControlTypeNone) {
-//            self.textLabel.text = NSLocalizedString(@"How to evaluate?", @"Menu item title");
-//        } else {
-//            // add different subview
-//            self.controlView = [_delegate cell:self controlViewForType:_controlType];
-//            [self setNeedsLayout];
-//        }
-//    }
-//}
 
 - (void)layoutSubviews
 {

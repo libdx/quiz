@@ -52,10 +52,4 @@
     }
 }
 
-//- (void)setEditing:(BOOL)editing animated:(BOOL)animated
-//{
-//    [super setEditing:editing animated:animated];
-//    self.textView.userInteractionEnabled = editing;
-//}
-
 @end

@@ -131,8 +131,6 @@
 		E1A62F7A184CC05400E090D8 /* ControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsViewController.m; sourceTree = "<group>"; };
 		E1A62F7C184CD75000E090D8 /* QZQuestion+UIKitSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QZQuestion+UIKitSpecific.h"; sourceTree = "<group>"; };
 		E1A62F7D184CD75000E090D8 /* QZQuestion+UIKitSpecific.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QZQuestion+UIKitSpecific.m"; sourceTree = "<group>"; };
-		E1A62F7F184D117E00E090D8 /* QZControlViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZControlViews.h; sourceTree = "<group>"; };
-		E1A62F80184D117E00E090D8 /* QZControlViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZControlViews.m; sourceTree = "<group>"; };
 		E1A62F82184D144300E090D8 /* NSManagedObjectContext+Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Quiz.h"; sourceTree = "<group>"; };
 		E1A62F83184D144300E090D8 /* NSManagedObjectContext+Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Quiz.m"; sourceTree = "<group>"; };
 		E1A62F85184D15BB00E090D8 /* ArrayTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayTableViewDataSource.h; sourceTree = "<group>"; };
@@ -185,8 +183,6 @@
 				E146E0FF182577BB0021EDE3 /* UIKit+Utils.m */,
 				E1A62F7C184CD75000E090D8 /* QZQuestion+UIKitSpecific.h */,
 				E1A62F7D184CD75000E090D8 /* QZQuestion+UIKitSpecific.m */,
-				E1A62F7F184D117E00E090D8 /* QZControlViews.h */,
-				E1A62F80184D117E00E090D8 /* QZControlViews.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";

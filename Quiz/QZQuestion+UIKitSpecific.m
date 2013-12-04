@@ -10,47 +10,48 @@
 
 @implementation QZQuestion (UIKitSpecific)
 
-- (UIView *)controlView
+- (UIControl *)controlView
 {
-    UIView *view;
+    UIControl *control;
     switch ((QZControlType)self.control.integerValue) {
         case QZControlTypeDiscret: {
-            view = [self discretControlView];
+            control = [self discretControlView];
             break;
         }
         case QZControlTypeContinuous: {
-            view = [self continuousControlView];
+            control = [self continuousControlView];
             break;
         }
         case QZControlTypeBinary: {
-            view = [self binaryControlView];
+            control = [self binaryControlView];
         }
 
         default:
             break;
     }
-    return view;
+    return control;
 }
 
-- (UIView *)discretControlView
+- (UIControl *)discretControlView
 {
     NSMutableArray *items = [NSMutableArray array];
-    for (double i = self.min.doubleValue; i < self.max.doubleValue; i += self.step.doubleValue) {
+    for (double i = self.min.doubleValue; i <= self.max.doubleValue; i += self.step.doubleValue) {
         [items addObject:[NSString stringWithFormat:@"%@", @(i)]];
     }
     UISegmentedControl *sc = [[UISegmentedControl alloc] initWithItems:items];
     return sc;
 }
 
-- (UIView *)continuousControlView
+- (UIControl *)continuousControlView
 {
     UISlider *slider = [[UISlider alloc] init];
     slider.maximumValue = self.max.floatValue;
     slider.minimumValue = self.min.floatValue;
+    slider.value = floor(0.5 * (slider.maximumValue - slider.minimumValue));
     return slider;
 }
 
-- (UIView *)binaryControlView
+- (UIControl *)binaryControlView
 {
     NSArray *items = @[@"Correct", @"Incorrect"];
     UISegmentedControl *sc = [[UISegmentedControl alloc] initWithItems:items];

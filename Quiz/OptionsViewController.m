@@ -24,6 +24,8 @@
 
 @end
 
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+
 @implementation OptionsViewController
 
 - (instancetype)initWithStyle:(UITableViewStyle)style entityClass:(Class)entityClass
@@ -80,7 +82,8 @@
             cell.textField.delegate = self;
             cell.textField.returnKeyType = UIReturnKeyDone;
 
-            [cell.textField becomeFirstResponder];
+            if (NO == [cell.textField becomeFirstResponder])
+                LogError(@"Text field can't become first responder");
         }
 
         if ([[entity questions] containsObject:self.question])
@@ -100,7 +103,7 @@
         // like self.question.some_property = entity;
         [self.question setValue:entity forKey:[self.entityClass propertizeEntityName]];
 
-        // force to put or remove checkmark at or from the selected cell
+        // force to put or remove checkmark at or from the selected cells
         [tableView reloadRowsAtIndexPaths:tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationFade];
     }];
 
@@ -140,8 +143,11 @@
 - (void)discardContext
 {
     // balance created entities
-    for (NSManagedObject *object in self.localContext.insertedObjects)
-         [self.localContext deleteObject:object];
+    for (NSManagedObject *object in self.localContext.insertedObjects) {
+        // don't delete objects that weren't created in this controller
+        if (object.class == self.entityClass)
+            [self.localContext deleteObject:object];
+    }
 }
 
 - (void)resetNavigationBarButtonItems
@@ -173,7 +179,12 @@
     id entity = [self.dataSource.fetchedResultsController objectAtIndexPath:editingIndexPath];
     [entity setTitle:self.entityTitle];
     self.entityTitle = nil;
-    [self.tableView reloadRowsAtIndexPaths:@[editingIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
+    // set newly created entity as selected
+    [self.question setValue:entity forKey:[self.entityClass propertizeEntityName]];
+
+    // force to put or remove checkmark at or from the selected cells
+    [self.tableView reloadRowsAtIndexPaths:self.tableView.indexPathsForVisibleRows withRowAnimation:UITableViewRowAnimationFade];
 
     // reset cancel and done buttons
     [self resetNavigationBarButtonItems];
@@ -196,7 +207,6 @@
 
     // delete unsaved changes
     [self discardContext];
-
 }
 
 - (void)textDidChange:(id)sender

@@ -54,10 +54,4 @@
     }
 }
 
-//- (void)setEditing:(BOOL)editing animated:(BOOL)animated
-//{
-//    [super setEditing:editing animated:animated];
-//    self.textField.userInteractionEnabled = editing;
-//}
-
 @end
